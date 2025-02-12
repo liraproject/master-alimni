@@ -1,4 +1,4 @@
-@props(['propName', 'placeholder', 'type' => 'text', 'isLoading' => false, 'prefixIcon' => ''])
+{{-- @props(['propName', 'placeholder', 'type' => 'text', 'isLoading' => false, 'prefixIcon' => ''])
 
 <div class="space-y-4">
     <label class="relative flex">
@@ -18,4 +18,4 @@
         </div>
         @endif
     </label>
-</div>
+</div> --}}
