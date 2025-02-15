@@ -3,7 +3,7 @@
     'color' => 'primary', // primary, secondary, info, success, warning, error
     'rounded' => 'lg', // lg, full
     'icon' => true, // can object (icon)
-    'close' => true, // can object (icon)
+    'closeButton' => true, // can object (icon)
 ])
 
 @php

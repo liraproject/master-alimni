@@ -8,11 +8,6 @@ import {
 } from "../../vendor/livewire/livewire/dist/livewire.esm";
 
 
-// Comment this line if you are not using Vite
-import { livewire_hot_reload } from 'virtual:livewire-hot-reload'
-livewire_hot_reload();
-
-
 // AlpineJS Plugins
 // import persist from "@alpinejs/persist"; // @see https://alpinejs.dev/plugins/persist
 // import collapse from "@alpinejs/collapse"; // @see https://alpinejs.dev/plugins/collapse

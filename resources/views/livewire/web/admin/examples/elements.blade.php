@@ -8,6 +8,38 @@
 
     <x-slot:main class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
 
+        <x-web.cards.base-card title="Colors">
+            <x-slot:body class="grid grid-cols-2 gap-2">
+                <div class="flex flex-col gap-2">
+                    <h3>Primary</h3>
+                    <x-web.elements.badge class="bg-primary-alimni-50" text="50" />
+                    <x-web.elements.badge class="bg-primary-alimni-100" text="100" />
+                    <x-web.elements.badge class="bg-primary-alimni-200" text="200" />
+                    <x-web.elements.badge class="bg-primary-alimni-300" text="300" />
+                    <x-web.elements.badge class="bg-primary-alimni-400" text="400" />
+                    <x-web.elements.badge class="bg-primary-alimni-500" text="500" />
+                    <x-web.elements.badge class="bg-primary-alimni-600" text="600" />
+                    <x-web.elements.badge class="bg-primary-alimni-700" text="700" />
+                    <x-web.elements.badge class="bg-primary-alimni-800" text="800" />
+                    <x-web.elements.badge class="bg-primary-alimni-900" text="900" />
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h3>Secondary</h3>
+                    <x-web.elements.badge class="bg-secondary-alimni-50" text="50" />
+                    <x-web.elements.badge class="bg-secondary-alimni-100" text="100" />
+                    <x-web.elements.badge class="bg-secondary-alimni-200" text="200" />
+                    <x-web.elements.badge class="bg-secondary-alimni-300" text="300" />
+                    <x-web.elements.badge class="bg-secondary-alimni-400" text="400" />
+                    <x-web.elements.badge class="bg-secondary-alimni-500" text="500" />
+                    <x-web.elements.badge class="bg-secondary-alimni-600" text="600" />
+                    <x-web.elements.badge class="bg-secondary-alimni-700" text="700" />
+                    <x-web.elements.badge class="bg-secondary-alimni-800" text="800" />
+                    <x-web.elements.badge class="bg-secondary-alimni-900" text="900" />
+                </div>
+            </x-slot:body>
+        </x-web.cards.base-card>
+
+
         <x-web.cards.base-card title="Alert">
             <x-slot:body class="space-y-2">
                 <x-web.elements.alert color="primary">
@@ -159,22 +191,26 @@
             </x-slot:body>
         </x-web.cards.base-card>
 
-        <x-web.cards.base-card title="Skeleton">
+        <x-web.cards.base-card title="Avatar">
             <x-slot:body class="space-y-2">
-                {{-- TODO : Add Skeleton Component all variant --}}
+                <!-- Default Avatar -->
+                <x-web.elements.avatar variant="circle" size="sm"
+                    image="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" />
+
+                <!-- Avatar with Initial -->
+                <x-web.elements.avatar variant="square" size="lg" initial="AB" color="primary" />
+
+                <!-- Avatar with Dot -->
+                <x-web.elements.avatar variant="soft" size="md"
+                    image="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+                    dot="visible" />
+
+                <!-- Avatar with Ping Dot -->
+                <x-web.elements.avatar variant="gradient-border" size="xl"
+                    image="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"
+                    dot="ping" />
             </x-slot:body>
         </x-web.cards.base-card>
 
-        <x-web.cards.base-card title="Skeleton">
-            <x-slot:body class="space-y-2">
-                {{-- TODO : Add Skeleton Component all variant --}}
-            </x-slot:body>
-        </x-web.cards.base-card>
-
-        <x-web.cards.base-card title="Skeleton">
-            <x-slot:body class="space-y-2">
-                {{-- TODO : Add Skeleton Component all variant --}}
-            </x-slot:body>
-        </x-web.cards.base-card>
     </x-slot:main>
 </div>

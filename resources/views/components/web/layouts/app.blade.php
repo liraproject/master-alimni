@@ -34,9 +34,8 @@
             document.documentElement.classList.add("dark");
     </script>
 
-    @isset($head)
-        {{ $head }}
-    @endisset
+
+    @stack('head')
 
 </head>
 
@@ -86,6 +85,8 @@
     -->
     <div id="x-teleport-target"></div>
 
+    @livewireScripts
+
     @livewireScriptConfig
 
     <script>
@@ -93,9 +94,7 @@
         window.addEventListener("DOMContentLoaded", () => Livewire.start());
     </script>
 
-    @isset($script)
-        {{ $script }}
-    @endisset
+    @stack('script')
 
 </body>
 
