@@ -6,6 +6,13 @@ use Livewire\Component;
 
 class ComponentComponents extends Component
 {
+    public $count = 0;
+
+    public function increment()
+    {
+        $this->count++;
+    }
+    
     public function mount()
     {
         // dd('apalah');
@@ -16,6 +23,7 @@ class ComponentComponents extends Component
         dd('coba');
         // $this->dispatch('notification', text: 'Notification ('. $t .')');
     }
+
 
     public function render()
     {
