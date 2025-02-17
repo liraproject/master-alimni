@@ -7,6 +7,6 @@
         </x-web.breadcrumb.breadcrumb>
     </x-slot:breadcrumb>
 
-    <x-slot:main class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
-    </x-slot:main>
+    <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
+    </div>
 </div>

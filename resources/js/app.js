@@ -6,7 +6,9 @@ import {
     Livewire,
     Alpine,
 } from "../../vendor/livewire/livewire/dist/livewire.esm";
+import '../css/app.css';
 
+// Livewire.start()
 
 // AlpineJS Plugins
 // import persist from "@alpinejs/persist"; // @see https://alpinejs.dev/plugins/persist

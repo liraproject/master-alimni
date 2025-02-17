@@ -18,7 +18,7 @@
     @livewireStyles
 
     <!-- CSS & JS Assets -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/js/app.js'])
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,9 +80,9 @@
             {{ $breadcrumb }}
             @endisset
 
-            {{ $slot}}
+            {{ $slot }}
+
         </main>
-        {{-- {{ $slot }} --}}
 
     </div>
 
@@ -92,13 +92,15 @@
     -->
     <div id="x-teleport-target"></div>
 
+
+    @livewireScriptConfig
+
+    @livewireScripts
+
     <script>
         // window.addEventListener("DOMContentLoaded", () => Alpine.start());
         window.addEventListener("DOMContentLoaded", () => Livewire.start());
     </script>
-
-    @livewireScriptConfig
-    @livewireScripts
 
 
 

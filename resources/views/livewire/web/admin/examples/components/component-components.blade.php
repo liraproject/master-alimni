@@ -16,8 +16,8 @@
         <x-web.cards.base-card title="Notification">
             <x-slot:body class="space-y-2">
                 {{-- <x-web.buttons.base-button @click="$notification({text: 'Coba notification'} )" /> --}}
-                <x-web.buttons.base-button wire:click='handleNotification' text="submit" />
-                <div wire:click.prevent='handleNotification' class="btn bg-primary">Coba</div>
+                <x-web.buttons.base-button wire:click="handleNotification()" text="submit" />
+                <div wire:click='handleNotification()' class="btn bg-primary">Coba</div>
             </x-slot:body>
         </x-web.cards.base-card>
 
@@ -26,8 +26,8 @@
 
             </x-slot:body>
         </x-web.cards.base-card>
+
     </div>
-    
 </div>
 
 {{-- @push('script')

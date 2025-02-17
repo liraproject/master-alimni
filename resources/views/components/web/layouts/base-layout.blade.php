@@ -16,7 +16,7 @@
     </title>
 
     <!-- CSS & JS Assets -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/js/app.js'])
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -43,7 +43,7 @@
     class="@isset($isSidebarOpen) {{ $isSidebarOpen === 'true' ? 'is-sidebar-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset">
 
     <!-- App preloader-->
-    <x-web.layouts.app-partials.app-preloader></x-web.layouts.app-partials.app-preloader>
+    {{-- <x-web.layouts.app-partials.app-preloader></x-web.layouts.app-partials.app-preloader> --}}
 
     <!-- Page Wrapper -->
     <div id="root" class="flex min-h-100vh grow bg-slate-50 dark:bg-navy-900" x-cloak>
@@ -59,7 +59,8 @@
     <div id="x-teleport-target"></div>
 
     <script>
-        window.addEventListener("DOMContentLoaded", () => Alpine.start());
+        // window.addEventListener("DOMContentLoaded", () => Alpine.start());
+        window.addEventListener("DOMContentLoaded", () => Livewire.start());
     </script>
 
     @isset($script)
