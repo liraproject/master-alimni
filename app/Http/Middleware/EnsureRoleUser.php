@@ -20,7 +20,7 @@ class EnsureRoleUser
         if (Auth::check() && $request->user()->role_id == $roleId) {
             return $next($request);
         } else {
-            return redirect('/');
+            return redirect('/login');
         }
     }
 }

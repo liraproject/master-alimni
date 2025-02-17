@@ -63,26 +63,18 @@
         <!-- Right Sidebar -->
         <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar>
 
-        {{-- @isset($main)
-        <main {{ $main->attributes->merge(['class' => 'main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8']) }}>
+        <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
 
-            @isset($breadcrumb)
-            {{ $breadcrumb }}
-            @endisset
-
-            {{ $main }}
-
-        </main>
-        @endisset --}}
-
-        <main class="main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'">
             @isset($breadcrumb)
             {{ $breadcrumb }}
             @endisset
 
             {{ $slot }}
 
+            <x-web.layouts.app-partials.bottom-navbar />
+
         </main>
+
 
     </div>
 
@@ -95,10 +87,9 @@
 
     @livewireScriptConfig
 
-    @livewireScripts
+    {{-- @livewireScripts --}}
 
     <script>
-        // window.addEventListener("DOMContentLoaded", () => Alpine.start());
         window.addEventListener("DOMContentLoaded", () => Livewire.start());
     </script>
 

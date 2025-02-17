@@ -45,7 +45,7 @@ class AuthController extends Controller
                 case Role::TEACHER:
                     return redirect()->route('teacher.dashboard');
                 default:
-                    return redirect('/');
+                    return redirect('/login');
             }
         } else {
             $validator->errors()->add(
