@@ -18,7 +18,7 @@
     @livewireStyles
 
     <!-- CSS & JS Assets -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/js/app.js'])
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -63,7 +63,7 @@
         <!-- Right Sidebar -->
         <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar>
 
-        @isset($main)
+        {{-- @isset($main)
         <main {{ $main->attributes->merge(['class' => 'main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8']) }}>
 
             @isset($breadcrumb)
@@ -73,9 +73,17 @@
             {{ $main }}
 
         </main>
-        @endisset
+        @endisset --}}
 
-        {{-- {{ $slot }} --}}
+        <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
+
+            @isset($breadcrumb)
+            {{ $breadcrumb }}
+            @endisset
+
+            {{ $slot }}
+
+        </main>
 
     </div>
 
@@ -85,9 +93,10 @@
     -->
     <div id="x-teleport-target"></div>
 
-    @livewireScripts
 
     @livewireScriptConfig
+
+    @livewireScripts
 
     <script>
         // window.addEventListener("DOMContentLoaded", () => Alpine.start());

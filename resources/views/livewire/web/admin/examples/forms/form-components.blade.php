@@ -7,7 +7,7 @@
         </x-web.breadcrumb.breadcrumb>
     </x-slot:breadcrumb>
 
-    <x-slot:main class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
+    <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
         <x-web.cards.base-card>
             <x-slot:title>Input basic</x-slot:title>
             <x-slot:body class="grid max-w-xl grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
@@ -60,5 +60,5 @@
                 </x-web.forms.base-input>
             </x-slot:body>
         </x-web.cards.base-card>
-    </x-slot:main>
+    </div>
 </div>

@@ -6,7 +6,7 @@
         </x-web.breadcrumb.breadcrumb>
     </x-slot:breadcrumb>
 
-    <x-slot:main class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
+    <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:gap-6">
 
         <x-web.cards.base-card title="Colors">
             <x-slot:body class="grid grid-cols-2 gap-2">
@@ -212,5 +212,5 @@
             </x-slot:body>
         </x-web.cards.base-card>
 
-    </x-slot:main>
+    </div>
 </div>
