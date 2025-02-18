@@ -1,5 +1,4 @@
-<div class="transition-all duration-700 ease-in-out main-sidebar"
-    :class="isSidebarExpanded ? 'w-[17rem]' : ''">
+<div class="transition-all duration-700 ease-in-out main-sidebar" :class="isSidebarExpanded ? 'w-[17rem]' : ''">
     <div @mouseenter="isSidebarExpanded = $store.global.isSidebarExpanded ? true : true"
         @mouseleave="isSidebarExpanded = $store.global.isSidebarExpanded ? true : false"
         class="flex flex-col items-start w-full h-full px-4 bg-white border-r border-slate-150 dark:border-navy-700 dark:bg-navy-800">
@@ -31,8 +30,8 @@
 
             @foreach ($menu[0]['menu'] as $menu)
                 @if ($menu['isDevider'] ?? false)
-                    <div class="m-3 overflow-hidden font-semibold uppercase ease-in-out text-slate-500 line-clamp-1 text-clip" x-transition.duration.500ms
-                        x-text="isSidebarExpanded ? '{{ $menu['title'] }}' : '. . .'"></div>
+                    <div class="h-5 m-3 font-semibold uppercase ease-in-out text-slate-500"
+                        x-transition.duration.500ms x-text="isSidebarExpanded ? '{{ $menu['title'] }}' : '. . .'"></div>
                 @elseif ($menu['sub_menu'] != [])
                     <div x-data="accordionItem('{{ explode('.', $menu['route'])[1] }}')" class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
                         <div @click="expanded = !expanded"
@@ -106,8 +105,7 @@
         <!-- Bottom Links -->
         <div class="flex flex-col items-center justify-center w-full py-3 space-y-3 ">
             <!-- Settings -->
-            <div class="w-full"
-                class="overflow-hidden transition-transform duration-1000 ease-in-out">
+            <div class="w-full" class="overflow-hidden transition-transform duration-1000 ease-in-out">
                 <a wire:navigate href="#"
                     class="flex gap-2 h-11 w-full items-center justify-end px-2 rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === 'setting' ?? '' ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 bg-primary/10 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' }}">
                     <span x-show="isSidebarExpanded" class="overflow-hidden line-clamp-1 text-clip"
@@ -128,8 +126,7 @@
             </div>
 
             <!-- Profile -->
-            <div x-data="usePopper({ placement: 'right-end', offset: 12 })" class="w-full"
-                @click.outside="if(isShowPopper) isShowPopper = false"
+            <div x-data="usePopper({ placement: 'right-end', offset: 12 })" class="w-full" @click.outside="if(isShowPopper) isShowPopper = false"
                 class="flex transition-transform duration-1000 ease-in-out">
                 <button @click="isShowPopper = !isShowPopper" x-ref="popperRef"
                     class="flex items-center w-full gap-2 p-2 transition-transform duration-1000 ease-in-out rounded-lg hover:bg-primary/20 dark:hover:bg-navy-300/20"

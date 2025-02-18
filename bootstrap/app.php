@@ -25,6 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'student' => EnsureRoleUser::class.':'.Role::STUDENT,
             'teacher' => EnsureRoleUser::class.':'.Role::TEACHER,
         ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (InvalidOrderException $e, Request $request) {

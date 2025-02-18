@@ -6,7 +6,7 @@
             <!-- Left: Sidebar Toggle Button -->
             <div class="size-7">
                 <button
-                    class="menu-toggle ml-0.5 flex size-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80"
+                    class="menu-toggle ml-0.5 flex size-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80 sm:hidden"
                     :class="isSidebarExpanded && 'active'"
                     @click="
                         if (!isSidebarExpanded) {

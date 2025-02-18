@@ -37,7 +37,7 @@ class AuthController extends Controller
                 Cookie::queue('saveuser', $request->email, 20160);
                 Cookie::queue('savepwd', $request->password, 20160);
             }
-            switch (auth()->user()->role_id) {
+            switch (Auth::user()->role_id) {
                 case Role::ADMIN:
                     return redirect()->route('admin.dashboard');
                 case Role::STUDENT:
@@ -76,14 +76,14 @@ class AuthController extends Controller
             "password" => Hash::make($validated["password"])
         ]);
 
-        auth()->login($user);
+        Auth::login($user);
 
         return redirect()->route('student.dashboard');
     }
 
     public function logout()
     {
-        auth()->logout();
+        Auth::logout();
         return redirect()->route('loginView');
     }
 }
