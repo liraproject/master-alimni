@@ -5,7 +5,7 @@ namespace App\Http\View\Composers;
 use App\Main\Menu\AdminMenu;
 use App\Main\Menu\StudentMenu;
 use App\Main\Menu\TeacherMenu;
-use App\Main\SidebarPanel;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class SidebarComposer
@@ -22,7 +22,7 @@ class SidebarComposer
             $pageName = request()->route()->getName();
             $routePrefix = explode('.', $pageName)[1] ?? '';
 
-            switch (auth()->user()?->role_id) {
+            switch (Auth::user()?->role_id) {
                 case 1:
                     $view->with('menu', AdminMenu::all());
                     break;
@@ -34,7 +34,6 @@ class SidebarComposer
                     break;
             }
 
-            $view->with('user', auth()->user());
             $view->with('pageName', $pageName);
             $view->with('routePrefix', $routePrefix);
         }
