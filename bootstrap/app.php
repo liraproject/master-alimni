@@ -3,7 +3,7 @@
 use App\Http\Middleware\AuthCheck;
 use App\Http\Middleware\EnsureRoleUser;
 use App\Http\Middleware\RedirectIfAuthenticated;
-use App\Main\Role;
+use App\Main\Roles;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -21,9 +21,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'auth' => AuthCheck::class,
             'guest' => RedirectIfAuthenticated::class,
-            'admin' => EnsureRoleUser::class.':'.Role::ADMIN,
-            'student' => EnsureRoleUser::class.':'.Role::STUDENT,
-            'teacher' => EnsureRoleUser::class.':'.Role::TEACHER,
+            'admin' => EnsureRoleUser::class.':'.Roles::ADMIN,
+            'student' => EnsureRoleUser::class.':'.Roles::STUDENT,
+            'teacher' => EnsureRoleUser::class.':'.Roles::TEACHER,
         ]);
 
     })

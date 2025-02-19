@@ -50,18 +50,26 @@
         <!-- Sidebar -->
         <div class="sidebar print:hidden">
             <!-- Main Sidebar -->
-            <x-web.layouts.app-partials.main-sidebar></x-web.layouts.app-partials.main-sidebar>
+            <x-web.layouts.app-partials.main-sidebar />
 
         </div>
-
         <!-- App Header -->
-        <x-web.layouts.app-partials.headers.header></x-web.layouts.app-partials.headers.header>
+        @switch($user->role_id)
+            @case(\App\Main\Roles::ADMIN)
+                <x-web.layouts.app-partials.headers.admin-header />
+            @break
 
-        <!-- Mobile Searchbar -->
-        {{-- <x-web.layouts.app-partials.mobile-searchbar></x-web.layouts.app-partials.mobile-searchbar> --}}
+            @case(\App\Main\Roles::STUDENT)
+                <x-web.layouts.app-partials.headers.student-header />
+            @break
 
-        <!-- Right Sidebar -->
-        {{-- <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar> --}}
+            @case(\App\Main\Roles::TEACHER)
+                <x-web.layouts.app-partials.headers.teacher-header />
+            @break
+
+            @default
+                <x-web.layouts.app-partials.headers.base-header />
+        @endswitch
 
         <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
 
@@ -73,7 +81,23 @@
 
         </main>
 
-        <x-web.layouts.app-partials.bottom-navbar.bottom-navbar />
+        <!-- Bottom Navbar -->
+        @switch($user->role_id)
+            @case(\App\Main\Roles::ADMIN)
+                <x-web.layouts.app-partials.bottom-navbar.admin-bottom-navbar />
+            @break
+
+            @case(\App\Main\Roles::STUDENT)
+                <x-web.layouts.app-partials.bottom-navbar.student-bottom-navbar />
+            @break
+
+            @case(\App\Main\Roles::TEACHER)
+                <x-web.layouts.app-partials.bottom-navbar.teacher-bottom-navbar />
+            @break
+
+            @default
+                <x-web.layouts.app-partials.bottom-navbar.base-bottom-navbar />
+        @endswitch
 
     </div>
 
@@ -93,9 +117,9 @@
     </script>
 
     <script>
-        function handleScrollSticky() {
+        function handleScrollSticky(domId) {
             let lastScrollTop = 0;
-            const bottomNavbar = document.getElementById('bottom-navbar');
+            const bottomNavbar = document.getElementById(domId);
 
             window.addEventListener('scroll', function() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -113,15 +137,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            handleScrollSticky();
+            handleScrollSticky('bottom-navbar');
         });
 
         document.addEventListener('livewire:navigated', function() {
-            handleScrollSticky();
+            handleScrollSticky('bottom-navbar');
         });
     </script>
 
-    @stack('script')
+    @stack('scripts')
 
 </body>
 
