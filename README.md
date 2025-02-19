@@ -1,66 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Welcome to Alimni Learning App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# ![Alimni Logo](https://drive.google.com/file/d/1d2xS9GqhaUL4NOPfzegTebT-TDVvPMyN/view?usp=sharing) Alimni - Aplikasi Belajar Online Terbaik
 
-## About Laravel
+Selamat datang di Alimni, aplikasi belajar online terbaik sepanjang masa! 
+'#'runToBeEternal 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Template
+- **Web**: [LiveOne (Lineone x Livewire)](https://www.notion.so/LiveOne-18618c3ddd11808f812aeaebf01439fb)
+- **Mobile**: Sticky Mobile
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Attributions
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Package
+1. [DomPDF](https://github.com/barryvdh/laravel-dompdf)
+2. [Laravel Excel](https://docs.laravel-excel.com/3.1/getting-started/installation.html)
+3. [Image Intervention (for compress uploaded image)](https://image.intervention.io/v3/introduction/installation)
+4. [Mobiledetect](https://docs.mobiledetect.net/home/install)
+5. [Simple QR-Code](https://github.com/simplesoftwareio/simple-qrcode?tab=readme-ov-file)
 
-## Learning Laravel
+### Icons
+- [Heroicons]()
+- [Fontawesome]()
+- [1600 Icons]()
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Icons
+- [Poppins]()
+- [Inter]()
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Third-Party Library in LineOne
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Library       | Official/Documentation Page                          |
+|---------------|------------------------------------------------------|
+| TailwindCSS   | [https://tailwindcss.com/](https://tailwindcss.com/) |
+| Iodine        | [https://github.com/mattkingshott/iodine](https://github.com/mattkingshott/iodine) |
+| Popperjs      | [https://popper.js.org/](https://popper.js.org/)     |
+| Apexcharts    | [https://apexcharts.com/](https://apexcharts.com/)   |
+| Cleave.js     | [https://nosir.github.io/cleave.js/](https://nosir.github.io/cleave.js/) |
+| Day.js        | [https://day.js.org/](https://day.js.org/)           |
+| Filepond      | [https://pqina.nl/filepond/](https://pqina.nl/filepond/) |
+| Flatpickr     | [https://flatpickr.js.org/](https://flatpickr.js.org/) |
+| Gridjs        | [https://gridjs.io/](https://gridjs.io/)             |
+| Quill         | [https://www.quill.org/](https://www.quill.org/)     |
+| Simplebar     | [https://github.com/Grsmto/simplebar](https://github.com/Grsmto/simplebar) |
+| Sortablejs    | [https://sortablejs.github.io/Sortable/](https://sortablejs.github.io/Sortable/) |
+| Swiper        | [https://swiperjs.com/](https://swiperjs.com/)       |
+| Tippy.js      | [https://atomiks.github.io/tippyjs/v6/getting-started/](https://atomiks.github.io/tippyjs/v6/getting-started/) |
+| Toastify-js   | [https://apvarun.github.io/toastify-js/](https://apvarun.github.io/toastify-js/) |
+| Tom-select    | [https://tom-select.js.org/](https://tom-select.js.org/) |
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Kuliah Singkat
 
-### Premium Partners
+### A. Cara Menambahkan Role
+1. Tambah di seeder / sql database di table roles
+2. Tambahkan Properti di `app/Main/Role.php`
+3. Tambahkan Middleware di `bootstrap/app.php`
+4. Tambahkan Routes di `route/` (buat file `role.php` lagi)
+5. Tambahkan Redirect di Login method di `app/Http/Controllers/AuthController.php`
+6. Tambahkan Sidebar Menu:
+    - Buat File `RoleMenu.php` di `app/Main/Menu/`
+    - Daftarkan di `app/Http/View/Composers/SidebarComposer.php`
+7. Edit Layout untuk menambahkan Header dan Bottom Navigation:
+    - **Web**: `resources/views/components/web/layouts/app.blade.php`
+    - **Mobile**: `resources/views/components/mobile/layouts/app.blade.php`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## B. Dokumentasi Components
+- **Web**: [LiveOne (Lineone x Livewire)](https://www.notion.so/LiveOne-18618c3ddd11808f812aeaebf01439fb)
 
-## Contributing
+#### 1. Cara menggunakan Chart
+_Coming soon_
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### 2. Cara menggunakan Notification (alternatif toastr)
+_Coming soon_
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### 1. Cara menggunakan Table
+_Coming soon_

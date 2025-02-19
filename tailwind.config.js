@@ -56,7 +56,7 @@ const customColors = {
     secondary: secondaryAlimni[600],
     "secondary-light": secondaryAlimni[300],
     "secondary-focus": secondaryAlimni[700],
-    "accent-light": colors.indigo["400"],
+    "accent-light": primaryAlimni[400],
     accent: primaryAlimni[600],
     "accent-focus": primaryAlimni[700],
     info: colors.sky["500"],

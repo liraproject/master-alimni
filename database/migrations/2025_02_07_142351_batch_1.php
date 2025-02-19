@@ -288,20 +288,19 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('programs');
-        Schema::dropIfExists('students');
-        Schema::dropIfExists('teachers');
         Schema::dropIfExists('job_careers');
         Schema::dropIfExists('phone_codes');
         Schema::dropIfExists('provinces');
         Schema::dropIfExists('regencies');
         Schema::dropIfExists('districts');
+        Schema::dropIfExists('programs');
+        Schema::dropIfExists('students');
+        Schema::dropIfExists('teachers');
         Schema::dropIfExists('lessons');
         Schema::dropIfExists('level_competencies');
         Schema::dropIfExists('limit_teachers');
         Schema::dropIfExists('sertifikasi_pengajar');
         Schema::dropIfExists('skill_set_pengajar');
-        Schema::dropIfExists('payroll');
         Schema::dropIfExists('classes');
         Schema::dropIfExists('batch');
         Schema::dropIfExists('schedules');
@@ -313,5 +312,6 @@ return new class extends Migration
         Schema::dropIfExists('log_akses_lessons');
         Schema::dropIfExists('log_ziyadah');
         Schema::dropIfExists('ujian');
+        Schema::dropIfExists('payroll');
     }
 };

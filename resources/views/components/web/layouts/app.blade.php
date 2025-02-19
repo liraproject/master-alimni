@@ -55,26 +55,25 @@
         </div>
 
         <!-- App Header -->
-        <x-web.layouts.app-partials.header></x-web.layouts.app-partials.header>
+        <x-web.layouts.app-partials.headers.header></x-web.layouts.app-partials.headers.header>
 
         <!-- Mobile Searchbar -->
-        <x-web.layouts.app-partials.mobile-searchbar></x-web.layouts.app-partials.mobile-searchbar>
+        {{-- <x-web.layouts.app-partials.mobile-searchbar></x-web.layouts.app-partials.mobile-searchbar> --}}
 
         <!-- Right Sidebar -->
-        <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar>
+        {{-- <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar> --}}
 
         <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
 
             @isset($breadcrumb)
-            {{ $breadcrumb }}
+                {{ $breadcrumb }}
             @endisset
 
             {{ $slot }}
 
-            <x-web.layouts.app-partials.bottom-navbar />
-
         </main>
 
+        <x-web.layouts.app-partials.bottom-navbar.bottom-navbar />
 
     </div>
 
@@ -93,7 +92,34 @@
         window.addEventListener("DOMContentLoaded", () => Livewire.start());
     </script>
 
+    <script>
+        function handleScrollSticky() {
+            let lastScrollTop = 0;
+            const bottomNavbar = document.getElementById('bottom-navbar');
 
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down
+                    bottomNavbar.classList.remove('show');
+                } else {
+                    // Scrolling up
+                    bottomNavbar.classList.add('show');
+                }
+
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            handleScrollSticky();
+        });
+
+        document.addEventListener('livewire:navigated', function() {
+            handleScrollSticky();
+        });
+    </script>
 
     @stack('script')
 
