@@ -58,10 +58,10 @@
         <x-web.layouts.app-partials.headers.header></x-web.layouts.app-partials.headers.header>
 
         <!-- Mobile Searchbar -->
-        <x-web.layouts.app-partials.mobile-searchbar></x-web.layouts.app-partials.mobile-searchbar>
+        {{-- <x-web.layouts.app-partials.mobile-searchbar></x-web.layouts.app-partials.mobile-searchbar> --}}
 
         <!-- Right Sidebar -->
-        <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar>
+        {{-- <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar> --}}
 
         <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
 

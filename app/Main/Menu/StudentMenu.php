@@ -10,7 +10,7 @@ class StudentMenu
             'title' => 'Dashboard Pengampu',
             'menu' => [
                 [
-                    'title' => 'Beranda',
+                    'title' => 'Dashboard',
                     'route' => 'student.dashboard',
                     'icon' => '<svg class="size-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <path fill="currentColor" fill-opacity=".3"
@@ -33,7 +33,21 @@ class StudentMenu
                     'sub_menu' => [],
                 ],
                 [
-                    'title' => 'Pembelajaran',
+                    'title' => 'Pendaftaran',
+                    'route' => 'student.registration',
+                    'icon' => '<svg class="size-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect fill="currentColor" x="5" y="8" width="11" height="13" rx="2" fill="#7E869E" fill-opacity="0.25"/>
+                            <path fill="currentColor" d="M8 14L14 14" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M8 11L12 11" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M8 17L12 17" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M19 13V15C19 17.8284 19 19.2426 18.1213 20.1213C17.2426 21 15.8284 21 13 21H11C8.17157 21 6.75736 21 5.87868 20.1213C5 19.2426 5 17.8284 5 15V9C5 6.17157 5 4.75736 5.87868 3.87868C6.75736 3 8.17157 3 11 3H12" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M18 3L18 9" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M21 6L15 6" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                        </svg>',
+                    'sub_menu' => [],
+                ],
+                [
+                    'title' => 'PROGRAM & MATERI',
                     'isDevider' => true,
                 ],
                 [
@@ -87,10 +101,11 @@ class StudentMenu
                     'title' => 'Sertifikasi',
                     'route' => 'student.exam.certification',
                     'icon' => '<svg class="size-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill="currentColor" d="M5 5C5 3.89543 5.89543 3 7 3H11.75C11.8881 3 12 3.11193 12 3.25V8C12 9.10457 12.8954 10 14 10H18.75C18.8881 10 19 10.1119 19 10.25V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V5Z" fill="#7E869E" fill-opacity="0.25"/>
-                            <path fill="currentColor" d="M13 8V3.60355C13 3.38083 13.2693 3.26929 13.4268 3.42678L18.5732 8.57322C18.7307 8.73071 18.6192 9 18.3964 9H14C13.4477 9 13 8.55228 13 8Z" fill="#222222"/>
-                            <path fill="currentColor" d="M8.5 13.5L14.5 13.5" stroke="#222222" stroke-linecap="round"/>
-                            <path fill="currentColor" d="M8.5 16.5L13.5 16.5" stroke="#222222" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M13 7V3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V9H15C14.0572 9 13.5858 9 13.2929 8.70711C13 8.41421 13 7.94281 13 7Z" fill="#7E869E" fill-opacity="0.25"/>
+                            <path fill="currentColor" d="M13.1716 3H9C7.11438 3 6.17157 3 5.58579 3.58579C5 4.17157 5 5.11438 5 7V17C5 18.8856 5 19.8284 5.58579 20.4142C6.17157 21 7.11438 21 9 21H15C16.8856 21 17.8284 21 18.4142 20.4142C19 19.8284 19 18.8856 19 17V8.82843C19 8.41968 19 8.2153 18.9239 8.03153C18.8478 7.84776 18.7032 7.70324 18.4142 7.41421L14.5858 3.58579C14.2968 3.29676 14.1522 3.15224 13.9685 3.07612C13.7847 3 13.5803 3 13.1716 3Z" stroke="#222222" stroke-width="1.2"/>
+                            <path fill="currentColor" d="M9 13L15 13" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M9 17L13 17" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M13 3V7C13 7.94281 13 8.41421 13.2929 8.70711C13.5858 9 14.0572 9 15 9H19" stroke="#222222" stroke-width="1.2"/>
                         </svg>',
                     'sub_menu' => [],
                 ],
@@ -98,11 +113,13 @@ class StudentMenu
                     'title' => 'Ujian',
                     'route' => 'student.exam.placement',
                     'icon' => '<svg class="size-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect fill="currentColor" x="5" y="3" width="14" height="18" rx="2" fill="#7E869E" fill-opacity="0.25"/>
-                            <circle fill="currentColor" cx="15.5" cy="16.5" r="2" stroke="#222222"/>
-                            <path fill="currentColor" d="M18 19L19.5 20.5" stroke="#222222" stroke-linecap="round"/>
-                            <path fill="currentColor" d="M7.5 6.5L14.5 6.5" stroke="#222222" stroke-linecap="round"/>
-                            <path fill="currentColor" d="M7.5 9.5L11.5 9.5" stroke="#222222" stroke-linecap="round"/>
+                            <rect fill="currentColor" x="5" y="3" width="11" height="13" rx="2" fill="#7E869E" fill-opacity="0.25"/>
+                            <path fill="currentColor" d="M9 7L13 7" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M9 15L12 15" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M9 11L15 11" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M19 11V9C19 6.17157 19 4.75736 18.1213 3.87868C17.2426 3 15.8284 3 13 3H11C8.17157 3 6.75736 3 5.87868 3.87868C5 4.75736 5 6.17157 5 9V15C5 17.8284 5 19.2426 5.87868 20.1213C6.75736 21 8.17157 21 11 21H12" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <circle fill="currentColor" cx="17.5" cy="17.5" r="2.5" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
+                            <path fill="currentColor" d="M21 21L19.5 19.5" stroke="#222222" stroke-width="1.2" stroke-linecap="round"/>
                         </svg>',
                     'sub_menu' => [
                         [

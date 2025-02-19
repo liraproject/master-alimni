@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth', 'student'], 'prefix' => 'student', 'as' => 'student.'], function () {
     Route::get('/dashboard', DashboardStudent::class)->name('dashboard');
     Route::get('/profile', ProfileStudent::class)->name('profile');
+    Route::get('/registration', ProfileStudent::class)->name('registration');
 
     Route::group(['prefix' => 'learning', 'as' => 'learning.'], function () {
         Route::group(['prefix' => 'tahsin', 'as' => 'tahsin.'], function () {
