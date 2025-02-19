@@ -7,12 +7,12 @@
             <a wire:navigate href="/" class="flex items-center gap-2">
                 <img class="transition-transform duration-1000 ease-in-out size-12 "
                     :class="isSidebarExpanded ? 'rotate-[360deg]' : '-rotate-[360deg]'"
-                    src="{{ asset('images/app-logo.svg') }}" alt="logo" />
+                    src="{{ asset('logo/alimni-logo.svg') }}" alt="logo" />
                 <div class="m-3 font-semibold uppercase text-md text-slate-500" x-show="isSidebarExpanded"
                     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
                     x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
                     x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-                    LaraOne
+                    Alimni
                 </div>
             </a>
 
@@ -30,7 +30,7 @@
 
             @foreach ($menu[0]['menu'] as $menu)
                 @if ($menu['isDevider'] ?? false)
-                    <div class="h-5 m-3 font-semibold uppercase ease-in-out text-slate-500"
+                    <div class="min-h-5 max-h-5 m-3 font-semibold uppercase ease-in-out text-slate-500 overflow-hidden lineclamp-1 text-clip"
                         x-transition.duration.500ms x-text="isSidebarExpanded ? '{{ $menu['title'] }}' : '. . .'"></div>
                 @elseif ($menu['sub_menu'] != [])
                     <div x-data="accordionItem('{{ explode('.', $menu['route'])[1] }}')" class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
