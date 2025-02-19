@@ -14,7 +14,7 @@
     <title>Alimni - Learning Center</title>
 
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('favicon-alimni.ico') }}" />
 
     <!-- inject css start -->
 
@@ -54,8 +54,48 @@
     <!--== default-color -->
     <link href="{{ asset('assets/css/theme-color/color-3.css') }}" rel="stylesheet" type="text/css" />
 
-    <!-- inject css end -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
+    {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> --}}
+    <style>
+        .float {
+            position: fixed;
+            width: 45px;
+            height: 45px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            animation: bounce 2s infinite;
+        }
+
+        .my-float {
+            margin-top: 9px;
+            margin-right: 9px;
+            margin-bottom: 8px;
+            margin-left: 10px;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px); 
+            }
+        }
+    </style>
+
+
+    <!-- inject css end -->
 </head>
 
 <body>
@@ -66,7 +106,7 @@
 
         <!-- preloader start -->
 
-        {{-- <div id="ht-preloader">
+        <div id="ht-preloader">
             <div class="loader clear-loader">
                 <div class="loader-box"></div>
                 <div class="loader-box"></div>
@@ -78,7 +118,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
         <!-- preloader end -->
 
@@ -86,8 +126,15 @@
 
         <!--back-to-top start-->
 
-        <div class="scroll-top"><a class="smoothscroll" href="#top"><i class="flaticon-go-up-in-web"></i></a></div>
-
+        {{-- <div class="scroll-top text-success">
+            <a class="smoothscroll" href="#top"><i class="flaticon-go-up-in-web"></i></a>
+        </div> --}}
+        {{-- <div class="scroll-top text-success">
+            <a class="smoothscroll" href="#top"><i class="flaticon-go-up-in-web"></i></a>
+        </div> --}}
+        <a href="https://wa.me/6285775745484" class="float" target="_blank">
+            <i class="fab fa-whatsapp my-float"></i>
+        </a>
         <!--back-to-top end-->
 
 
@@ -127,8 +174,37 @@
         <!--== theme-script -->
         <script src="{{ asset('assets/js/theme-script.js') }}"></script>
 
-        <!-- inject js end -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const navLinks = document.querySelectorAll('.nav-link');
+                const sections = document.querySelectorAll('section');
 
+                window.addEventListener('scroll', () => {
+                    let current = '';
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight;
+                        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').includes(current)) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+        <script>
+            feather.replace();
+        </script>
+        <!-- inject js end -->
 </body>
 
 </html>
