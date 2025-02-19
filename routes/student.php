@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth', 'student'], 'prefix' => 'student', 'as' =
     // Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
     //     // child route, ex Detail Material
     // });
+    
     Route::get('/registration', RegistrationStudent::class)->name('registration');
     // Route::group(['prefix' => 'registration', 'as' => 'registration.'], function () {
     //     // child route, ex Detail Material
