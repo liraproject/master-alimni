@@ -5,7 +5,7 @@
         <!-- Application Logo -->
         <div class="flex items-center justify-between w-full pt-4 overflow-hidden">
             <a wire:navigate href="/" class="flex items-center gap-2">
-                <img class="transition-transform duration-1000 ease-in-out size-12 "
+                <img class="p-1 transition-transform duration-1000 ease-in-out size-12"
                     :class="isSidebarExpanded ? 'rotate-[360deg]' : '-rotate-[360deg]'"
                     src="{{ asset('logo/alimni-logo.svg') }}" alt="logo" />
                 <div class="m-3 font-semibold uppercase text-md text-slate-500" x-show="isSidebarExpanded"
@@ -30,7 +30,7 @@
 
             @foreach ($menu[0]['menu'] as $menu)
                 @if ($menu['isDevider'] ?? false)
-                    <div class="min-h-5 max-h-5 m-3 font-semibold uppercase ease-in-out text-slate-500 overflow-hidden lineclamp-1 text-clip"
+                    <div class="m-3 overflow-hidden font-semibold uppercase ease-in-out min-h-5 max-h-5 text-slate-500 lineclamp-1 text-clip"
                         x-transition.duration.500ms x-text="isSidebarExpanded ? '{{ $menu['title'] }}' : '. . .'"></div>
                 @elseif ($menu['sub_menu'] != [])
                     <div x-data="accordionItem('{{ explode('.', $menu['route'])[1] }}')" class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
@@ -83,9 +83,11 @@
                 @else
                     <div class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
                         <a wire:navigate href="{{ route($menu['route']) }}"
-                            class="flex gap-2 h-11 w-full items-center justify-start px-2 rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === explode('.', $menu['route'])[1] ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 bg-primary/10 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' }}">
+                            class="flex gap-2 h-11 w-full items-center px-1 justify-start rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === explode('.', $menu['route'])[1] ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 bg-primary/10 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' }}"
+                            {{-- :class="isSidebarExpanded ? 'justify-start' : 'justify-center'" --}}
+                        >
                             <h4 class="flex items-center gap-2">
-                                <div class="object-cover">
+                                <div class="object-cover p-1 bg-gray-200 rounded-full dark:bg-navy-700">
                                     {!! $menu['icon'] ?? '' !!}
                                 </div>
                                 <p x-show="isSidebarExpanded" class="overflow-hidden line-clamp-1 text-clip"
