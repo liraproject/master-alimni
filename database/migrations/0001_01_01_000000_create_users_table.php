@@ -14,18 +14,21 @@ return new class extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->string('access', 255);
             $table->timestamps();
         });
 
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('fullname', 255);
             $table->foreignId('role_id')->constrained('roles');
-            $table->rememberToken();
+            $table->string('photo', 255)->nullable();
+            $table->string('verification_code', 255)->unique();
+            $table->boolean('is_verified');
+            $table->timestamp('verified_at')->default(now());
+            $table->timestamp('last_seen')->default(now());
             $table->timestamps();
         });
 
