@@ -45,7 +45,7 @@
         @endisset
 
         <input
-            {{ $attributes->merge(['class' => $inputClass]) }}
+            {{ $attributes->merge(['class' => "mt-1 $inputClass"]) }}
             @if ($disabled) disabled @endif
             placeholder="{{ $placeholder }}"
             value="{{ $value }}"

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class SertifikasiPengajarService
+class ScheduleService
 {
     /**
      * Create a new class instance.

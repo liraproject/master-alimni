@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class ProvincyService
+class BatchService
 {
     /**
      * Create a new class instance.

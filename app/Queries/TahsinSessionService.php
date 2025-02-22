@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class PhoneCodeService
+class TahsinSessionService
 {
     /**
      * Create a new class instance.

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class UjianService
+class ProgramService
 {
     /**
      * Create a new class instance.

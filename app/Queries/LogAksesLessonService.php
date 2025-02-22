@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class DistrictService
+class LogAksesLessonService
 {
     /**
      * Create a new class instance.

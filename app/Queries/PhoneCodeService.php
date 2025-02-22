@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class JobCareerService
+class PhoneCodeService
 {
     /**
      * Create a new class instance.

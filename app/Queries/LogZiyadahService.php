@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class LevelCompetencyService
+class LogZiyadahService
 {
     /**
      * Create a new class instance.

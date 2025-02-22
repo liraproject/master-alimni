@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class LimitTeacherService
+class TahfidzSessionService
 {
     /**
      * Create a new class instance.

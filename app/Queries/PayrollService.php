@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class TahsinSessionService
+class PayrollService
 {
     /**
      * Create a new class instance.

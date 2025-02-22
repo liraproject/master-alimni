@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class ScheduleRequestService
+class StudentService
 {
     /**
      * Create a new class instance.

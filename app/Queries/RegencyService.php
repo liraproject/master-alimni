@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class LogZiyadahService
+class RegencyService
 {
     /**
      * Create a new class instance.

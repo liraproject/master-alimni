@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Queries;
 
-class TeacherService
+class JobCareerService
 {
     /**
      * Create a new class instance.
