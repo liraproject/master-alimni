@@ -23,16 +23,16 @@
                                     <a class="nav-link" href="#hero">Home</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#fitur">Features</a>
+                                    <a class="nav-link " href="#fitur">Keunggulan</a>
                                 </li>
                                 <li class="nav-item ">
                                     <a class="nav-link " href="#list-program">Program</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#price-list">Price</a>
+                                    <a class="nav-link " href="#price-list">Biaya</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#contact" >Contact Us</a>
+                                    <a class="nav-link " href="#contact" >Kontak</a>
                                 </li>
                             </ul>
                         </div>

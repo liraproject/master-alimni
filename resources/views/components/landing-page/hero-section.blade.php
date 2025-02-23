@@ -12,10 +12,8 @@
                         src="{{ asset('images/illustrations/hero.svg') }}" alt="">
                 </div>
                 <div class="col-lg-6 col-md-12 mt-5 mt-lg-0">
-                    <h1 class="mb-4 wow fadeInUp" data-wow-duration="1.5s">Online <b class="text-theme">Learning</b>
-                        Belajar Agama Lebih Mudah, Cukup dari Rumah</h1>
-                    <p class="lead mb-4 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">Penyedia Jasa
-                        Kursus Online Untuk Mendalami Agama Sesuai Ajaran Salaful Ummah</p>
+                    <h1 class="mb-4 wow fadeInUp" data-wow-duration="1.5s">Online <b class="text-theme">Private Tahsin dan Tahfidz</b> Al Qur'an</h1>
+                    <p class="lead mb-4 wow fadeInUp" data-wow-duration="2s" data-wow-delay="0.3s">Tempat belajar quran secara online berbasis aplikasi yang sesuai aqidah salaful ummah</p>
                     <a class="btn btn-dark wow fadeInUp" data-wow-duration="3s" data-wow-delay="0.5s" href="#"
                         data-text="Daftar">
                         <span>N</span><span>e</span><span>w</span><span></span>

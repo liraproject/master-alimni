@@ -29,7 +29,7 @@
         <!--New Member start-->
         <section id="new-member" class="" data-bg-img="{{ asset('assets/images/pattern/03.png') }}">
             <div class="row justify-content-center text-center">
-                <div class="col-lg-8 col-md-12">
+                {{-- <div class="col-lg-8 col-md-12">
                     <div class="section-title">
                         <div class="title-effect">
                             <div class="bar bar-top"></div>
@@ -40,7 +40,7 @@
                         <h2>New<b class="text-theme">Member</b></h2>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="subscribe-box mt-3">
                 <div class="container wow fadeInUp" data-wow-duration="3s">
                     <div class="row subscribe-inner align-items-center">

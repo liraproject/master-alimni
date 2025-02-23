@@ -9,7 +9,7 @@
                         <div class="bar bar-bottom"></div>
                         <div class="bar bar-left"></div>
                     </div>
-                    <h6>What You Get</h6>
+                    <h6>Keunggulan</h6>
                     <h2 class="title">Apa Yang Kamu <b class="text-theme">Dapatkan</b> </h2>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     <div class="step-desc">
                         <h4>Materi Terstruktur</h4>
                         <p class="mb-0">
-                            Kurikulum pembelajaran yang terorganisir, mulai dari dasar hingga lanjutan, memudahkan Anda untuk belacar secara sistematis dan efektif.
+                            Kurikulum yang terorganisir, mulai dari pemula hingga lanjutan, memudahkan anda untuk belajar secara <b class="text-theme">sistematis dan efektif.</b> Semua tersedia dalam satu <b class="text-theme">aplikasi mobile</b>
                         </p>
                     </div>
                 </div>
@@ -52,9 +52,9 @@
                         <div class="step-num">02</div>
                     </div>
                     <div class="step-desc">
-                        <h4>Mentor Berpengalaman</h4>
+                        <h4>Pengajar Berpengalaman</h4>
                         <p class="mb-0">
-                            Didampingi oleh mentor ahli di bidangnya, siap membimbing Anda dengan metode yang tepat dan personalisasi sesuai kebutuhan.
+                            Didampingi oleh pengajar ahli di bidangnya, siap membimbing anda dengan metode yang tepat dan <b class="text-theme">personalisasi sesuai kebutuhan. </b> Sebagian sudah memiliki <b class="text-theme">Sanad Al Qur'an</b>
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     <div class="step-desc">
                         <h4>Konsultasi</h4>
                         <p class="mb-0">
-                            Sesi konsultasi berkala dengan mentor untuk evaluasi perkembangan, solusi kendala, dan motivasi agar tetap konsisten dalam belajar agama.
+                            Sesi konsultasi secara <b class="text-theme">private dengan pengajar</b> untuk evaluasi perkembangan, solusi kendala, dan motivasi agar tetap konsisten dalam belajar
                         </p>
                     </div>
                 </div>

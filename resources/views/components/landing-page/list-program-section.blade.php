@@ -26,45 +26,63 @@
                 <div class="row">
                     {{-- Tahsin --}}
                     <div class="col-lg-6 col-md-6">
-                        <div class="featured-item style-3">
-                            <div class="featured-icon">
-                                <i class="fab fa-readme"></i>
+                        <a href="#" class="text-dark">
+                            <div class="featured-item style-3">
+                                <div class="featured-icon">
+                                    <i class="fab fa-readme"></i>
+                                </div>
+                                <div class="featured-title">
+                                    <h5>Tahsin</h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>
+                                        Program ini dirancang untuk membantu anda <b class="text-theme">membaca Al-Qur'an dengan lancar dan tepat</b> sesuai tajwid dan makhraj yang benar
+                                        <br/>
+                                        <a href="#"><i>Selengkapnya ></i></a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="featured-title">
-                                <h5>Tahsin</h5>
-                            </div>
-                            <div class="featured-desc">
-                                <p>Program ini dirancang untuk membantu Anda membaca Al-Qur'an dengan lancar dan tepat, sesuai tajwid dan makhraj yang benar</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     {{-- Tahfidz --}}
                     <div class="col-lg-6 col-md-6 mt-4">
-                        <div class="featured-item style-3">
-                            <div class="featured-icon">
-                                <i class="fas fa-quran"></i>
+                        <a href="#" class="text-dark">
+                            <div class="featured-item style-3">
+                                <div class="featured-icon">
+                                    <i class="fas fa-quran"></i>
+                                </div>
+                                <div class="featured-title">
+                                    <h5>Tahfidz</h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>
+                                        Program menghafal Al-Qur'an dengan metode terstruktur, membantu anda untuk <b class="text-theme">menjaga hafalan</b> dan menjadi teman anda untuk <b class="text-theme">menghafal 30 juz</b>
+                                        <br/>
+                                        <a href="#"><i>Selengkapnya ></i></a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="featured-title">
-                                <h5>Tahfidz</h5>
-                            </div>
-                            <div class="featured-desc">
-                                <p>Program menghafal Al-Qur'an dengan metode terstruktur dan bimbingan mentor berpengalaman. Cocok untuk semua level, dari pemula hingga lanjutan.</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     {{-- Tilawah --}}
                     <div class="col-lg-6 col-md-6 mt-3 mt-md-0">
-                        <div class="featured-item style-3">
-                            <div class="featured-icon">
-                                <i class="fas fa-book-reader"></i>
+                        <a href="#" class="text-dark">
+                            <div class="featured-item style-3">
+                                <div class="featured-icon">
+                                    <i class="fas fa-book-reader"></i>
+                                </div>
+                                <div class="featured-title">
+                                    <h5>Tilawah</h5>
+                                </div>
+                                <div class="featured-desc">
+                                    <p>
+                                        Program ini fokus pada penguasaan dalam melantunkan ayat-ayat Al-Qur'an dengan indah dan benar
+                                        <br/>
+                                        <a href="#"><i>Selengkapnya ></i></a>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="featured-title">
-                                <h5>Tilawah</h5>
-                            </div>
-                            <div class="featured-desc">
-                                <p>Program ini fokus pada penguasaan dalam melantunkan ayat-ayat Al-Qur'an dengan indah dan benar</p>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                     {{-- Bahasa Arab --}}
                     <div class="col-lg-6 col-md-6 mt-4">

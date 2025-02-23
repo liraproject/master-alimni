@@ -10,7 +10,7 @@
                         <div class="bar bar-bottom"></div>
                         <div class="bar bar-left"></div>
                     </div>
-                    <h2><b class="text-theme">Price</b> List</h2>
+                    <h2><b class="text-theme">Biaya</b> Program Tahsin</h2>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                     <div class="price-inside">Reguler</div>
                     <div class="price-header">
                         <div class="price-value">
-                            <h2>110K</h2>
+                            <h2>110rb</h2>
                             <span>/ Batch</span>
                         </div>
                         <h3 class="price-title">Reguler</h3>
@@ -33,26 +33,28 @@
                     </a>
                     <div class="price-list">
                         <ul class="list-unstyled">
-                            <li><b>2 kali</b> pertemuan per pekan</li>
-                            <li>4 Pekan Pembelajaran</li>
-                            <li>Cocok Untuk Pemula</li>
-                            <li>Konsistensi Terjaga</li>
+                            <li>2x pertemuan per pekan</li>
+                            <li>8x pertemuan per batch</li>
+                            <li>Pembelajaran private 1 on 1</li>
+                            <li>Sertifikat</li>
                             <li>Materi Pdf</li>
                             <li>Materi Video</li>
+                            <li>Grup diskusi</li>
+                            <li>Akses aplikasi mobile</li>
                         </ul>
                     </div>
                 </div>
             </div>
             {{-- Premium --}}
-            <div class="col-lg-4 col-md-12 mt-5 mt-lg-0 wow slideInDown" data-wow-duration="2s">
+            <div class="col-lg-4 col-md-12 mt-5 mt-lg-0 wow slideInUp" data-wow-duration="2s">
                 <div class="price-table">
-                    <div class="price-inside">Premium</div>
+                    <div class="price-inside">Intensif</div>
                     <div class="price-header">
                         <div class="price-value">
-                            <h2>140K</h2>
+                            <h2>165rb</h2>
                             <span>/ Batch</span>
                         </div>
-                        <h3 class="price-title">Premium</h3>
+                        <h3 class="price-title">Intensif</h3>
                     </div>
                     <a class="btn btn-theme btn-circle my-4" href="#" data-text="Daftar Sekarang">
                         <span>D</span><span>a</span><span>f</span><span>t</span><span>a</span><span>r</span>
@@ -61,12 +63,15 @@
                     </a>
                     <div class="price-list">
                         <ul class="list-unstyled">
-                            <li><b>3 kali</b> pertemuan per pekan</li>
-                            <li>4 Pekan Pembelajaran</li>
-                            <li>Belajar dengan Intensif </li>
+                            <li>3x pertemuan per pekan</li>
+                            <li>12x pertemuan per batch</li>
+                            <li>Pembelajaran private 1 on 1</li>
+                            <li>Sertifikat</li>
                             <li>Materi Pdf</li>
                             <li>Materi Video</li>
-                            <li>Interaksi Lebih Banyak</li>
+                            <li>Grup diskusi</li>
+                            <li>Akses aplikasi mobile</li>
+                            <li>Interaksi lebih banyak</li>
                         </ul>
                     </div>
                 </div>
@@ -74,13 +79,13 @@
             {{-- Expert --}}
             <div class="col-lg-4 col-md-12 mt-5 mt-lg-0 wow slideInRight" data-wow-duration="2s">
                 <div class="price-table active">
-                    <div class="price-inside">Expert</div>
+                    <div class="price-inside">Eksklusif</div>
                     <div class="price-header">
                         <div class="price-value">
-                            <h2>190K</h2>
+                            <h2>275rb</h2>
                             <span>/ Batch</span>
                         </div>
-                        <h3 class="price-title">Expert</h3>
+                        <h3 class="price-title">Eksklusif</h3>
                     </div>
                     <a class="btn btn-theme btn-circle my-4" href="#" data-text="Daftar Sekarang">
                         <span>D</span><span>a</span><span>f</span><span>t</span><span>a</span><span>r</span>
@@ -89,17 +94,26 @@
                     </a>
                     <div class="price-list">
                         <ul class="list-unstyled">
-                            <li><b>4 kali</b> pertemuan per pekan</li>
-                            <li>4 Pekan Pembelajaran</li>
-                            <li>Belajar dengan Intensif </li>
-                            <li>Fokus Makharjul Huruf & Tajwid</li>
+                            <li>5x pertemuan per pekan</li>
+                            <li>20x pertemuan per batch</li>
+                            <li>Pembelajaran private 1 on 1</li>
+                            <li>Sertifikat</li>
                             <li>Materi Pdf</li>
                             <li>Materi Video</li>
-                            <li>Interaksi Lebih Banyak</li>
-                            <li>Pendampingan Langsung</li>
+                            <li>Grup diskusi</li>
+                            <li>Akses aplikasi mobile</li>
+                            <li>Modul dalam bentuk cetak (buku)</li>
+                            <li>Konsultasi private</li>
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div class="col-12 text-center wow slideInUp" data-wow-duration="2s">
+                <a class="btn btn-theme btn-circle my-4" href="#" data-text="Biaya Program Lainnya">
+                    <span>I</span><span>n</span><span>f</span><span>o</span><span></span>
+                    <span>H</span><span>a</span><span>r</span><span>g</span><span>a</span><span></span>
+                    <span>s</span><span>e</span><span>l</span><span>e</span><span>n</span><span>g</span><span>k</span><span>a</span><span>p</span><span>n</span><span>y</span><span>a</span>
+                </a>
             </div>
         </div>
     </div>
