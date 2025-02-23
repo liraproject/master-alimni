@@ -2,9 +2,24 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Bonus extends Model
 {
-    //
+    use HasFactory;
+
+    protected $table = 'bonuses';
+    protected $fillable = [
+        'bonus_name',
+        'amount',
+        'created_at',
+        'updated_at'
+    ];
+
+    public function bonusRequests()
+    {
+        return $this->hasMany(BonusRequest::class);
+    }
+
 }
