@@ -14,6 +14,11 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
+    public function landingView()
+    {
+        return view('landing-page');
+    }
+    
     public function loginView()
     {
         return view('login');
