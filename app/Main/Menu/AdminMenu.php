@@ -7,7 +7,6 @@ class AdminMenu
     public static function sidebar()
     {
         return [
-            'title' => 'Dashboard Pengampu',
             'menu' => [
                 [
                     'title' => 'Dashboard',

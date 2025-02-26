@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PagesController;
+use App\Livewire\Guest\BoardingNewMemberRegistration;
+use App\Livewire\Guest\BoardingRegistration;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +23,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
     Route::get('/register', [\App\Http\Controllers\AuthController::class, 'registerView'])->name('registerView');
     Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register'])->name('register');
+    Route::get('/boarding-registration', BoardingRegistration::class)->name('boarding-registration');
 });
 
 Route::middleware('auth')->group(function () {
