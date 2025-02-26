@@ -5,6 +5,7 @@
     'dot' => 'none', // visible, ping
     'size' => 'md', // xs, sm, md, lg, xl
     'color' => 'primary', // primary, secondary, info, success, warning, error
+    'action' => null,
 ])
 
 @php
