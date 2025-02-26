@@ -6,7 +6,7 @@
             <!-- Left: Sidebar Toggle Button -->
             <div class="size-7">
                 <button
-                    class="menu-toggle ml-0.5 flex size-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80 sm:hidden"
+                    class="menu-toggle ml-0.5 flex size-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80 md:hidden"
                     :class="isSidebarExpanded && 'active'"
                     @click="
                         if (!isSidebarExpanded) {
@@ -491,7 +491,7 @@
                         <div class="avatar size-10 ">
                             <img class="flex items-center justify-center overflow-hidden text-white rounded-full bg-primary text-bold"
                                 src="{{ asset('images/200x200.png') }}"
-                                alt="{{ substr(auth()->user()->name, 1, 2) }}" />
+                                alt="{{ substr(auth()->user()->fullname, 1, 2) }}" />
                             <span
                                 class="absolute right-0 size-3.5 rounded-full border-2 border-white bg-success dark:border-navy-700"></span>
                         </div>
@@ -504,11 +504,11 @@
                             x-transition:leave-end="opacity-0 scale-90">
                             <p
                                 class="overflow-hidden text-base font-medium text-slate-700 dark:text-navy-100 dark:focus:text-accent-light line-clamp-1 text-clip">
-                                {{ $user->name }}
+                                {{ $user->fullname }}
                             </p>
                             <p
                                 class="overflow-hidden text-xs text-slate-400 dark:text-navy-300 line-clamp-1 text-clip">
-                                {{ $user->role->name }}
+                                {{ $user->role->role_name }}
                             </p>
                         </div>
                     </button>
@@ -524,7 +524,7 @@
                                 <div>
                                     <a wire:navigate href="#"
                                         class="text-base font-medium text-slate-700 hover:text-primary focus:text-primary dark:text-navy-100 dark:hover:text-accent-light dark:focus:text-accent-light">
-                                        {{ $user->name }}
+                                        {{ $user->fullname }}
                                     </a>
                                     <p class="text-xs text-slate-400 dark:text-navy-300">
                                         {{ $user->email }}

@@ -1,30 +1,68 @@
 @props([
+    'type' => 'text', // text, number
     'label' => null,
     'prefix' => null,
     'suffix' => null,
     'placeholer' => '',
-    'variant' => 'default', // merged
+    'variant' => 'default', // default, merged
     'style' => [
         'rounded' => 'lg', // full, lg, none
     ],
     'props' => [
         'main' => [],
-        'wrap' => []
-    ]
+        'wrap' => [],
+    ],
 ])
 
-<div @foreach (array_merge(['class' => 'mb-3'], $props['main']) as $key => $val) {{ $key }}="{{ $val }}" @endforeach>
+@php
+    if (!(isset($prefix) || isset($prefixText) || isset($prefixButton) || isset($prefixDropdown)) && !(isset($suffix) || isset($suffixText) || isset($suffixButton) || isset($suffixDropdown))) {
+        $roundedClass = 'rounded-' . $style['rounded'];
+    } elseif ((isset($prefix) || isset($prefixText) || isset($prefixButton) || isset($prefixDropdown)) && (isset($suffix) || isset($suffixText) || isset($suffixButton) || isset($suffixDropdown))) {
+        $roundedClass = '';
+    } elseif (isset($prefix) || isset($prefixText) || isset($prefixButton) || isset($prefixDropdown)) {
+        $roundedClass = 'rounded-r-' . $style['rounded'];
+    } elseif (isset($suffix) || isset($suffixText) || isset($suffixButton) || isset($suffixDropdown)) {
+        $roundedClass = 'rounded-l-' . $style['rounded'];
+    } else {
+        $roundedClass = '';
+    }
+
+    // style button
+    $buttonClass = 'btn font-medium disabled:pointer-events-none disabled:select-none disabled:opacity-60';
+    if ($style['rounded'] === 'full') {
+        $roundedClassPrefixButton = 'rounded-l-full';
+        $roundedClassSuffixButton = 'rounded-r-full';
+    } else {
+        $roundedClassPrefixButton = 'rounded-r-none';
+        $roundedClassSuffixButton = 'rounded-l-none';
+    }
+
+@endphp
+
+<div
+    @foreach (array_merge(['class' => 'mb-3'], $props['main']) as $key => $val) {{ $key }}="{{ $val }}" @endforeach>
     @isset($label)
         <span {{ is_object($label) ? $label->attributes->merge([]) : '' }}>{{ $label }}</span>
     @endisset
 
     @if ($variant == 'default')
-        <label @foreach (array_merge(['class' => 'flex mt-1 -space-x-px'], $props['wrap']) as $key => $val) {{ $key }}="{{ $val }}" @endforeach>
+        <label
+            @foreach (array_merge(['class' => 'flex my-1 -space-x-px'], $props['wrap']) as $key => $val) {{ $key }}="{{ $val }}" @endforeach>
+
             @isset($prefix)
+                {{ $prefix }}
+            @endisset
+            @isset($prefixText)
                 <div
-                    {{ $prefix->attributes->merge(['class' => 'flex items-center justify-center rounded-l-' . $style['rounded'] . ' border border-slate-300 px-3.5 font-inter dark:border-navy-450']) }}>
-                    <span>{{ $prefix }}</span>
+                    {{ $prefixText->attributes->merge(['class' => 'flex items-center justify-center rounded-l-' . $style['rounded'] . ' border border-slate-300 px-3.5 font-inter dark:border-navy-450']) }}>
+                    <span>{{ $prefixText }}</span>
                 </div>
+            @endisset
+            @isset($prefixButton)
+                <button
+                    {{ $prefixButton->attributes->merge(['class' => "$buttonClass $roundedClassPrefixButton bg-slate-150 text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"]) }}>
+                    {{ $prefixButton }}
+                </button>
             @endisset
             @isset($prefixDropdown)
                 <select
@@ -32,21 +70,33 @@
                     {{ $prefixDropdown }} {{-- kasih <option>...</option> --}}
                 </select>
             @endisset
+
             <input
-                {{ $attributes->merge(['class' => 'w-full px-3 py-2 bg-transparent border ' . (!(isset($prefix) || isset($prefixDropdown)) && !(isset($suffix) || isset($suffixDropdown)) ? 'rounded-' . $style['rounded'] : (!(isset($suffix) || isset($suffixDropdown)) ? ('rounded-r-' . $style['rounded']) : !(isset($prefix) || isset($prefixDropdown) ? ('rounded-l-' . $style['rounded']) : ''))) . ' form-input border-slate-300 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent']) }}
-                placeholder="{{ $placeholer }}" type="text" />
+                {{ $attributes->merge(['class' => "w-full px-3 py-2 bg-transparent border $roundedClass form-input border-slate-300 placeholder:text-slate-400/70 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"]) }}
+                placeholder="{{ $placeholer }}" type="{{ $type }}" />
+
+            @isset($suffix)
+                {{ $suffix }}
+            @endisset
+            @isset($suffixText)
+                <div
+                    {{ $suffixText->attributes->merge(['class' => 'flex items-center justify-center rounded-r-' . $style['rounded'] . ' border border-slate-300 px-3.5 font-inter dark:border-navy-450']) }}>
+                    <span>{{ $suffixText }}</span>
+                </div>
+            @endisset
+            @isset($suffixButton)
+                <button
+                    {{ $suffixButton->attributes->merge(['class' => "$buttonClass $roundedClassSuffixButton bg-slate-150 text-slate-800 hover:bg-slate-200 focus:bg-slate-200 active:bg-slate-200/80 dark:bg-navy-500 dark:text-navy-50 dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90"]) }}>
+                    {{ $suffixButton }}
+                </button>
+            @endisset
             @isset($suffixDropdown)
                 <select
                     {{ $suffixDropdown->attributes->merge(['class' => 'px-3 py-2 bg-white border rounded-r-' . $style['rounded'] . ' form-select border-slate-300 pr-9 hover:z-10 hover:border-slate-400 focus:z-10 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent']) }}>
                     {{ $suffixDropdown }} {{-- kasih <option>...</option> --}}
                 </select>
             @endisset
-            @isset($suffix)
-                <div
-                    {{ $suffix->attributes->merge(['class' => 'flex items-center justify-center rounded-r-' . $style['rounded'] . ' border border-slate-300 px-3.5 font-inter dark:border-navy-450']) }}>
-                    <span>{{ $suffix }}</span>
-                </div>
-            @endisset
+
         </label>
     @elseif ($variant == 'merged')
         {{-- --- ---- on progress ---- --- --}}
@@ -72,4 +122,8 @@
         </label>
         {{-- --- ---- #on progress ---- --- --}}
     @endif
+
+    @isset($textHelper)
+        <span {{ is_object($textHelper) ? $textHelper->attributes->merge(['class' => 'text-tiny+ text-slate-400 dark:text-navy-300']) : "class='text-tiny+ text-slate-400 dark:text-navy-300'" }}>{{ $textHelper }}</span>
+    @endisset
 </div>
