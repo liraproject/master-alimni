@@ -6,8 +6,7 @@
     'placeholder' => '',
     'textHelper' => null,
     'disabled' => false,
-    'error' => null,
-    'success' => null,
+    'state' => "default", // success, warning, error
     'variant' => 'outline', // filled, outline
     'style' => [],
     'props' => [
@@ -24,9 +23,9 @@
 
     $inputClass = 'form-input w-full rounded-' . $style['rounded'] . ' px-3 py-2 placeholder:text-slate-400/70';
 
-    if ($error) {
+    if ($state === "error") {
         $inputClass .= ' border border-error bg-transparent';
-    } elseif ($success) {
+    } elseif ($state === "success") {
         $inputClass .= ' border border-success bg-transparent';
     } elseif ($disabled) {
         $inputClass .= ' border border-slate-300 bg-transparent hover:border-slate-400 focus:border-primary disabled:pointer-events-none disabled:select-none disabled:border-none disabled:bg-zinc-100 dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent dark:disabled:bg-navy-600';
@@ -45,7 +44,7 @@
         @endisset
 
         <input
-            {{ $attributes->merge(['class' => $inputClass]) }}
+            {{ $attributes->merge(['class' => "my-1 $inputClass"]) }}
             @if ($disabled) disabled @endif
             placeholder="{{ $placeholder }}"
             value="{{ $value }}"

@@ -1,27 +1,27 @@
 <div class="transition-all duration-700 ease-in-out main-sidebar" :class="isSidebarExpanded ? 'w-[17rem]' : ''">
     <div @mouseenter="isSidebarExpanded = $store.global.isSidebarExpanded ? true : true"
-        @mouseleave="isSidebarExpanded = $store.global.isSidebarExpanded ? true : false"
+        @mouseleave="setTimeout(() => { isSidebarExpanded = $store.global.isSidebarExpanded ? true : false }, 200)"
         class="flex flex-col items-start w-full h-full px-4 bg-white border-r border-slate-150 dark:border-navy-700 dark:bg-navy-800">
         <!-- Application Logo -->
         <div class="flex items-center justify-between w-full pt-4 overflow-hidden">
             <a wire:navigate href="/" class="flex items-center gap-2">
-                <img class="transition-transform duration-1000 ease-in-out size-12 "
+                <img class="p-1 transition-transform duration-1000 ease-in-out size-12"
                     :class="isSidebarExpanded ? 'rotate-[360deg]' : '-rotate-[360deg]'"
-                    src="{{ asset('images/app-logo.svg') }}" alt="logo" />
+                    src="{{ asset('logo/alimni-logo.svg') }}" alt="logo" />
                 <div class="m-3 font-semibold uppercase text-md text-slate-500" x-show="isSidebarExpanded"
                     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
                     x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
                     x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
-                    LaraOne
+                    Alimni
                 </div>
             </a>
 
-            <div x-show="isSidebarExpanded" x-transition>
+            {{-- <div x-show="isSidebarExpanded" x-transition>
                 <div @click="$store.global.isSidebarExpanded = !$store.global.isSidebarExpanded"
                     class="p-0 rounded-full cursor-pointer btn size-7 text-primary hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:text-accent-light/80 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
                     <i class="fa-circle" :class="$store.global.isSidebarExpanded ? 'fa' : 'fa-regular'"></i>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Main Sections Links -->
@@ -30,7 +30,7 @@
 
             @foreach ($menu[0]['menu'] as $menu)
                 @if ($menu['isDevider'] ?? false)
-                    <div class="h-5 m-3 font-semibold uppercase ease-in-out text-slate-500"
+                    <div class="m-3 overflow-hidden font-semibold uppercase ease-in-out min-h-5 max-h-5 text-slate-500 lineclamp-1 text-clip"
                         x-transition.duration.500ms x-text="isSidebarExpanded ? '{{ $menu['title'] }}' : '. . .'"></div>
                 @elseif ($menu['sub_menu'] != [])
                     <div x-data="accordionItem('{{ explode('.', $menu['route'])[1] }}')" class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
@@ -60,7 +60,7 @@
                                         <li
                                             @if ($subMenu['route'] ?? '' === $pageName) x-init="$el.scrollIntoView({block:'center'});" @endif>
                                             @if ($subMenu['route'] ?? false)
-                                                <a wire:navigate href="{{ route($subMenu['route']) }}"
+                                                <a @if(($subMenu['isSPA'] ?? true)) wire:navigate @endif href="{{ route($subMenu['route']) }}"
                                                     class="flex text-xs+ py-2 ml-2 items-center gap-2 tracking-wide outline-none transition-colors duration-300 ease-in-out hover:text-primary {{ $subMenu['route'] === $pageName ? 'text-primary dark:text-accent-light font-medium' : 'text-slate-600  hover:text-primary dark:text-navy-200 dark:hover:text-navy-50' }}">
                                                     <i
                                                         class="{{ $subMenu['route'] === $pageName ? 'fa' : 'fa-regular' }} fa-circle"></i>
@@ -82,10 +82,12 @@
                     </div>
                 @else
                     <div class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
-                        <a wire:navigate href="{{ route($menu['route']) }}"
-                            class="flex gap-2 h-11 w-full items-center justify-start px-2 rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === explode('.', $menu['route'])[1] ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 bg-primary/10 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' }}">
+                        <a @if(($menu['isSPA'] ?? true)) wire:navigate @endif href="{{ route($menu['route']) }}"
+                            class="flex gap-2 h-11 w-full items-center px-1 justify-start rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === explode('.', $menu['route'])[1] ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 bg-primary/10 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' }}"
+                            {{-- :class="isSidebarExpanded ? 'justify-start' : 'justify-center'" --}}
+                        >
                             <h4 class="flex items-center gap-2">
-                                <div class="object-cover">
+                                <div class="object-cover p-1 bg-gray-200 rounded-full dark:bg-navy-700">
                                     {!! $menu['icon'] ?? '' !!}
                                 </div>
                                 <p x-show="isSidebarExpanded" class="overflow-hidden line-clamp-1 text-clip"

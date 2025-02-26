@@ -33,13 +33,19 @@ class UserSeeder extends Seeder
                 'role_id' => 2,
             ],
             [
-                'name' => 'Teacher 1',
+                'fullname' => 'Student 3',
+                'email' => 'student3',
+                'password' => bcrypt('123456'),
+                'role_id' => 2,
+            ],
+            [
+                'fullname' => 'Teacher 1',
                 'email' => 'teacher',
                 'password' => bcrypt('123456'),
                 'role_id' => 3,
             ],
             [
-                'name' => 'Teacher 2',
+                'fullname' => 'Teacher 2',
                 'email' => 'teacher2',
                 'password' => bcrypt('123456'),
                 'role_id' => 3,

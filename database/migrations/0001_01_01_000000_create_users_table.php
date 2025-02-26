@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->string('name');
+=======
+            $table->string('role_name');
+>>>>>>> feature/miko-base-layout-student
             $table->string('access', 255);
             $table->timestamps();
         });
@@ -22,6 +26,7 @@ return new class extends Migration
             $table->id();
             $table->string('email')->unique();
             $table->string('password');
+<<<<<<< HEAD
             $table->string('fullname', 255);
             $table->foreignId('role_id')->constrained('roles');
             $table->string('photo', 255)->nullable();
@@ -29,6 +34,16 @@ return new class extends Migration
             $table->boolean('is_verified');
             $table->timestamp('verified_at')->default(now());
             $table->timestamp('last_seen')->default(now());
+=======
+            $table->string('fullname');
+            $table->foreignId('role_id')->constrained('roles');
+            $table->string('photo')->nullable();
+            $table->string('verification_code')->nullable()->unique();
+            $table->boolean('is_verified')->nullable()->default(false);
+            $table->timestamp('verified_at')->nullable()->default(now());
+            $table->timestamp('last_seen')->nullable()->default(now());
+            $table->rememberToken();
+>>>>>>> feature/miko-base-layout-student
             $table->timestamps();
         });
 

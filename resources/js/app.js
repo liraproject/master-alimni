@@ -102,7 +102,16 @@ hljs.registerLanguage("xml", xml);
 hljs.configure({ ignoreUnescapedHTML: true });
 
 // Register plugin image preview for filepond
-FilePond.registerPlugin(FilePondPluginImagePreview);
+// FilePond.registerPlugin(FilePondPluginImagePreview);
+FilePond.registerPlugin(
+    // FilePondPluginFileValidateType,
+    // FilePondPluginImageCrop,
+    // FilePondPluginImageEdit,
+    // FilePondPluginImageExifOrientation,
+    FilePondPluginImagePreview,
+    // FilePondPluginImageResize,
+    // FilePondPluginImageTransform,
+);
 
 window.hljs = hljs;
 window.dayjs = dayjs;
