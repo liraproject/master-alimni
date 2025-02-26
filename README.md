@@ -22,9 +22,9 @@ Selamat datang di Alimni, aplikasi belajar online terbaik sepanjang masa!
 
 ### Icons
 
-- [Heroicons]()
-- [Fontawesome]()
-- [1600 Icons]()
+- [Heroicons](https://heroicons.com/)
+- [Fontawesome](https://fontawesome.com/)
+- [1600 Icons](https://www.figma.com/design/Gq6jzyHkWw6PImAowS95BB/Free-Icon-Pack-1800%2B-icons-(Community)?node-id=2-27&p=f&t=2Xj7q2jiFOx15Urw-0)
 
 ### Icons
 
