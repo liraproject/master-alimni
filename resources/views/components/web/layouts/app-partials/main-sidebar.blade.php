@@ -60,7 +60,7 @@
                                         <li
                                             @if ($subMenu['route'] ?? '' === $pageName) x-init="$el.scrollIntoView({block:'center'});" @endif>
                                             @if ($subMenu['route'] ?? false)
-                                                <a @if(!$subMenu['isSPA']) wire:navigate @endif href="{{ route($subMenu['route']) }}"
+                                                <a @if(($subMenu['isSPA'] ?? true)) wire:navigate @endif href="{{ route($subMenu['route']) }}"
                                                     class="flex text-xs+ py-2 ml-2 items-center gap-2 tracking-wide outline-none transition-colors duration-300 ease-in-out hover:text-primary {{ $subMenu['route'] === $pageName ? 'text-primary dark:text-accent-light font-medium' : 'text-slate-600  hover:text-primary dark:text-navy-200 dark:hover:text-navy-50' }}">
                                                     <i
                                                         class="{{ $subMenu['route'] === $pageName ? 'fa' : 'fa-regular' }} fa-circle"></i>
@@ -82,7 +82,7 @@
                     </div>
                 @else
                     <div class="ease-in-out" :class="isSidebarExpanded ? 'w-full' : ''">
-                        <a @if(!$menu['isSPA']) wire:navigate @endif href="{{ route($menu['route']) }}"
+                        <a @if(($menu['isSPA'] ?? true)) wire:navigate @endif href="{{ route($menu['route']) }}"
                             class="flex gap-2 h-11 w-full items-center px-1 justify-start rounded-lg outline-none transition-colors duration-200 {{ $routePrefix === explode('.', $menu['route'])[1] ? 'text-primary hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:bg-navy-600 bg-primary/10 dark:text-accent-light dark:hover:bg-navy-450 dark:focus:bg-navy-450 dark:active:bg-navy-450/90' : 'hover:bg-primary/20 focus:bg-primary/20 active:bg-primary/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' }}"
                             {{-- :class="isSidebarExpanded ? 'justify-start' : 'justify-center'" --}}
                         >
