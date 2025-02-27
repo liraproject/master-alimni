@@ -10,21 +10,10 @@ class Program extends Model
 {
     use HasFactory;
 
-    protected $table = 'programs';
-
-    protected $fillable = [
-        'program_name',
-        'description',
-        'base_price',
-        'base_sallary',
-        'price',
-        'minus_sallary',
-        'max_student_in_class',
-        'max_sessions',
-        'is_open',
-        'tone_color',
+    protected $guarded = [
+        'id',
         'created_at',
-        'updated_at',
+        'updated_at'
     ];
 
     public function lessons() : HasMany
@@ -92,6 +81,6 @@ class Program extends Model
         return $this->hasMany(ExamReport::class);
     }
 
-    
+
 
 }

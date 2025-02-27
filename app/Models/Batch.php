@@ -8,13 +8,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Batch extends Model
 {
     use HasFactory;
-    protected $table = 'batches';
-    protected $fillable = [
-        'batch_name',
-        'early_date',
-        'start_date',
-        'end_date',
-        'created_ad',
+
+    protected $guarded = [
+        'id',
+        'created_at',
         'updated_at'
     ];
 

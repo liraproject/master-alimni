@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PagesController;
-use App\Livewire\Guest\BoardingNewMemberRegistration;
 use App\Livewire\Guest\BoardingRegistration;
 use Illuminate\Support\Facades\Route;
 
