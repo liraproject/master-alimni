@@ -30,6 +30,7 @@
         'glow' => 'bg-' . $color . ' text-white hover:bg-' . $color . '-focus hover:shadow-lg hover:shadow-' . $color . '/50 focus:bg-' . $color . '-focus focus:shadow-lg focus:shadow-' . $color . '/50 active:bg-' . $color . '-focus/90',
         'gradient' => 'bg-gradient-to-r ' . $gradient . ' text-white',
         'outline-gradient' => 'bg-gradient-to-r ' . $gradient . ' p-0.5 font-medium',
+        'ghost' => '!rounded-full hover:bg-primary-alimni-300/20 focus:bg-primary-alimni-300/20 active:bg-primary-alimni-300/25 flex justify-center items-center',
         default => 'bg-' . $color . ' text-white hover:bg-' . $color . '-focus focus:bg-' . $color . '-focus active:bg-' . $color . '-focus/90',
     };
 @endphp

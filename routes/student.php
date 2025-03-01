@@ -22,14 +22,14 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['auth', 'student'], 'prefix' => 'student', 'as' => 'student.'], function () {
     Route::get('/dashboard', DashboardStudent::class)->name('dashboard');
     Route::get('/profile', ProfileStudent::class)->name('profile');
-    // Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
-    //     // child route, ex Detail Material
-    // });
-    
+    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
+        // child route, ex Detail Material
+    });
+
     Route::get('/registration', RegistrationStudent::class)->name('registration');
-    // Route::group(['prefix' => 'registration', 'as' => 'registration.'], function () {
-    //     // child route, ex Detail Material
-    // });
+    Route::group(['prefix' => 'registration', 'as' => 'registration.'], function () {
+        // child route, ex Detail Material
+    });
 
     Route::group(['prefix' => 'tahsin', 'as' => 'tahsin.'], function () {
         Route::get('/material', MaterialTahsinStudent::class)->name('material');

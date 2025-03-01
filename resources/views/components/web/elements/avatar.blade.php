@@ -2,7 +2,7 @@
     'variant' => 'square', // circle, square, squircle, soft, gradient-border
     'image' => null, // text or object (image)
     'initial' => null,
-    'dot' => 'none', // visible, ping
+    'dot' => 'none', // none, visible, ping
     'size' => 'md', // xs, sm, md, lg, xl
     'color' => 'primary', // primary, secondary, info, success, warning, error
     'action' => null,
@@ -11,6 +11,7 @@
 @php
     $baseClass = 'avatar';
     $sizeClass = match ($size) {
+        'xxs' => 'size-7',
         'xs' => 'size-8',
         'sm' => 'size-10',
         'md' => 'size-12',
@@ -21,6 +22,7 @@
         default => 'size-10',
     };
     $textClassInitial = match ($size) {
+        'xxs' => 'text-xs',
         'xs' => 'text-xs+',
         'sm' => '',
         'md' => 'text-base',
@@ -39,7 +41,7 @@
         default => 'rounded-full',
     };
     $dotClass = match ($dot) {
-        'visible' => 'absolute right-0 size-4 rounded-full border border-white bg-primary dark:border-navy-700 dark:bg-accent',
+        'visible' => 'absolute right-0 size-3.5 rounded-full border border-2 border-white bg-primary dark:border-navy-700 dark:bg-accent',
         'ping' => 'absolute right-0 size-4 rounded-full border border-white bg-primary dark:border-navy-700 dark:bg-accent animate-ping',
         default => '',
     };

@@ -4,6 +4,7 @@ namespace App\Http\View\Composers;
 
 use App\Main\Roles;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
 
 class MasterDataComposer

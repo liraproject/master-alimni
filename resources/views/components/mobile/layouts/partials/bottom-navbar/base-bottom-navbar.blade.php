@@ -1,4 +1,4 @@
-<div id="bottom-navbar" class="flex justify-center block pointer-events-none show sticky-bottom-navbar md:hidden">
+<div id="bottom-navbar" class="flex justify-center pointer-events-none show sticky-bottom-navbar">
     <div class="pointer-events-auto mx-auto flex space-x-1 rounded-full border border-slate-150 bg-white px-4 py-0.5 shadow-lg dark:border-navy-700 dark:bg-navy-900">
         <x-web.nav.bottom-nav-item
             text="Home"

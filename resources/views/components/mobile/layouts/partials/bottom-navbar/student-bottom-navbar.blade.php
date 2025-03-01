@@ -1,4 +1,4 @@
-<div id="bottom-navbar" class="flex justify-center block pointer-events-none show sticky-bottom-navbar md:hidden">
+<div id="bottom-navbar" class="flex justify-center pointer-events-none show sticky-bottom-navbar">
     <div class="flex items-start justify-center px-4 py-1 mx-auto space-x-1 bg-white border rounded-full shadow-lg pointer-events-auto border-slate-150 dark:border-navy-700 dark:bg-navy-900">
 
         <x-web.nav.bottom-nav-item

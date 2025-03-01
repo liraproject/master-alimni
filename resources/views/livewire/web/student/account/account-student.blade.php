@@ -70,7 +70,13 @@
                         value="{{ $user->fullname }}"
                         placeholder="Masukkan nama lengkap"
                         label="Nama Lengkap"
-                    />
+                    >
+                    <x-slot:dataList>
+                        <option value="Aldo">Aldo</option>
+                        <option value="Muhammad">Muhammad</option>
+                        <option value="Zaki">Zaki</option>
+                    </x-slot:dataList>
+                    </x-web.forms.base-input>
                     <x-web.forms.base-input
                         type="email"
                         name="email"

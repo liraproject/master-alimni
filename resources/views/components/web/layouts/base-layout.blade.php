@@ -11,7 +11,9 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        @isset($title) {{ $title }} - @endisset {{ config('app.name') }}
+        @isset($title)
+            {{ $title }} -
+        @endisset {{ config('app.name') }}
     </title>
 
     @livewireStyles
@@ -44,7 +46,7 @@
     class="@isset($isSidebarOpen) {{ $isSidebarOpen === 'true' ? 'is-sidebar-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset">
 
     <!-- App preloader-->
-    {{-- <x-web.layouts.app-partials.app-preloader></x-web.layouts.app-partials.app-preloader> --}}
+    {{-- <x-web.layouts.partials.app-preloader></x-web.layouts.partials.app-preloader> --}}
 
     <!-- Page Wrapper -->
     <div id="root" class="flex min-h-100vh grow bg-slate-50 dark:bg-navy-900" x-cloak>

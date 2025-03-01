@@ -11,7 +11,9 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>
-        @isset($title) {{ $title }} - @endisset {{ config('app.name') }}
+        @isset($title)
+            {{ $title }} -
+        @endisset {{ config('app.name') }}
     </title>
 
     @livewireStyles
@@ -49,25 +51,25 @@
         <!-- Sidebar -->
         <div class="sidebar print:hidden">
             <!-- Main Sidebar -->
-            <x-web.layouts.app-partials.main-sidebar />
+            <x-web.layouts.partials.main-sidebar />
 
         </div>
         <!-- App Header -->
         @switch($user->role_id)
             @case(\App\Main\Roles::ADMIN)
-                <x-web.layouts.app-partials.headers.admin-header />
+                <x-web.layouts.partials.headers.admin-header />
             @break
 
             @case(\App\Main\Roles::STUDENT)
-                <x-web.layouts.app-partials.headers.student-header />
+                <x-web.layouts.partials.headers.student-header />
             @break
 
             @case(\App\Main\Roles::TEACHER)
-                <x-web.layouts.app-partials.headers.teacher-header />
+                <x-web.layouts.partials.headers.teacher-header />
             @break
 
             @default
-                <x-web.layouts.app-partials.headers.base-header />
+                <x-web.layouts.partials.headers.base-header />
         @endswitch
 
         <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
@@ -79,24 +81,6 @@
             {{ $slot }}
 
         </main>
-
-        <!-- Bottom Navbar -->
-        @switch($user->role_id)
-            @case(\App\Main\Roles::ADMIN)
-                <x-web.layouts.app-partials.bottom-navbar.admin-bottom-navbar />
-            @break
-
-            @case(\App\Main\Roles::STUDENT)
-                <x-web.layouts.app-partials.bottom-navbar.student-bottom-navbar />
-            @break
-
-            @case(\App\Main\Roles::TEACHER)
-                <x-web.layouts.app-partials.bottom-navbar.teacher-bottom-navbar />
-            @break
-
-            @default
-                <x-web.layouts.app-partials.bottom-navbar.base-bottom-navbar />
-        @endswitch
 
     </div>
 
@@ -124,10 +108,8 @@
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
                 if (scrollTop > lastScrollTop) {
-                    // Scrolling down
                     bottomNavbar.classList.remove('show');
                 } else {
-                    // Scrolling up
                     bottomNavbar.classList.add('show');
                 }
 
