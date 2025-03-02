@@ -7,7 +7,7 @@ export default {
     isRightSidebarExpanded: false,
 
     init() {
-      this.isDarkModeEnabled = Alpine.$persist(false).as("_x_darkMode_on");
+    //   this.isDarkModeEnabled = Alpine.$persist(false).as("_x_darkMode_on");
 
       this.isSidebarExpanded =
         document.querySelector(".sidebar") &&

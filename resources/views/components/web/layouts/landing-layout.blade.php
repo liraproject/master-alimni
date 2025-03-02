@@ -89,11 +89,12 @@
                 transform: translateY(-20px);
             }
             60% {
-                transform: translateY(-10px); 
+                transform: translateY(-10px);
             }
         }
     </style>
 
+    @livewireStyles
 
     <!-- inject css end -->
 </head>
@@ -106,7 +107,7 @@
 
         <!-- preloader start -->
 
-        <div id="ht-preloader">
+        {{-- <div id="ht-preloader">
             <div class="loader clear-loader">
                 <div class="loader-box"></div>
                 <div class="loader-box"></div>
@@ -118,9 +119,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <!-- preloader end -->
+
+        <!--header start-->
+            <x-landing-page.navbar-section />
+        <!--header end-->
 
         {{ $slot }}
 
@@ -137,6 +142,24 @@
         </a>
         <!--back-to-top end-->
 
+        <!--footer start-->
+            <footer class="footer position-relative" data-bg-img="{{ asset('assets/images/bg/01.png') }}">
+                <div class="secondary-footer">
+                    <div class="container">
+                        <div class="copyright">
+                            <div class="row align-items-center">
+                                <div class="col-lg-6 col-md-12"> <span> @Copyright 2025 - <b class="text-theme">Alimni</b> |
+                                        All Rights Reserved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        <!--footer end-->
+    </div>
+
+        @livewireScripts
 
         <!-- inject js start -->
 
