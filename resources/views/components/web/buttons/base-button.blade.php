@@ -27,7 +27,7 @@
         'soft-color' => 'bg-' . $color . '/10 text-' . $color . ' hover:bg-' . $color . '/20 focus:bg-' . $color . '/20 active:bg-' . $color . '/25',
         'bordered' => 'border border-' . $color . '/30 bg-' . $color . '/10 text-' . $color . ' hover:bg-' . $color . '/20 focus:bg-' . $color . '/20 active:bg-' . $color . '/25',
         'flat' => 'text-' . $color . ' hover:bg-' . $color . '/20 focus:bg-' . $color . '/20 active:bg-' . $color . '/25',
-        'glow' => 'bg-' . $color . ' text-white hover:bg-' . $color . '-focus hover:shadow-lg hover:shadow-' . $color . '/50 focus:bg-' . $color . '-focus focus:shadow-lg focus:shadow-' . $color . '/50 active:bg-' . $color . '-focus/90',
+        'glow' => 'bg-' . $color . ' text-white shadow-lg shadow-'.$color.'/50 hover:bg-'.$color.'-focus focus:bg-'.$color.'-focus active:bg-'.$color.'-focus/90',
         'gradient' => 'bg-gradient-to-r ' . $gradient . ' text-white',
         'outline-gradient' => 'bg-gradient-to-r ' . $gradient . ' p-0.5 font-medium',
         default => 'bg-' . $color . ' text-white hover:bg-' . $color . '-focus focus:bg-' . $color . '-focus active:bg-' . $color . '-focus/90',

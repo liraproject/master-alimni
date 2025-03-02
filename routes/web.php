@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Guest\BoardingRegistration;
+use App\Livewire\Guest\PrivacyPolicy;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/boarding-registration', BoardingRegistration::class)->name('boarding-registration');
+Route::get('/privacy-policy', PrivacyPolicy::class)->name('guest.privacy-policy');
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [\App\Http\Controllers\AuthController::class, 'landingView'])->name('landingView');
@@ -20,7 +23,6 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('login');
     Route::get('/register', [\App\Http\Controllers\AuthController::class, 'registerView'])->name('registerView');
     Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register'])->name('register');
-    Route::get('/boarding-registration', BoardingRegistration::class)->name('boarding-registration');
 });
 
 Route::middleware('auth')->group(function () {

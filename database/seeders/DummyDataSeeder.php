@@ -14,19 +14,41 @@ class DummyDataSeeder extends Seeder
     public function run(): void
     {
         // Master Data
+        // DB::table('program_categories')->insert([
+        //     [
+        //         'category_name' => 'Tahsin',
+        //         'description' => 'Program untuk membantu anda membaca Al-Qur\'an dengan lancar dan tepat sesuai tajwid dan makhraj yang benar',
+        //         'tone_color' => '#36B611',
+        //     ],
+        //     [
+        //         'category_name' => 'Tahfidz',
+        //         'description' => 'Program menghafal Al-Qur\'an dengan metode terstruktur, membantu anda untuk menjaga hafalan dan menjadi teman anda untuk menghafal 30 juz',
+        //         'tone_color' => '#116FB6',
+        //     ],
+        //     [
+        //         'category_name' => 'Tilawah',
+        //         'description' => 'Program ini fokus pada penguasaan dalam melantunkan ayat-ayat Al-Qur\'an dengan indah dan benar',
+        //         'tone_color' => '#BE1CB6',
+        //     ],
+        //     [
+        //         'category_name' => 'Bahasa Arab',
+        //         'description' => 'Segera Hadir! Program pembelajaran Bahasa Arab untuk memahami Al-Qur\'an dan percakapan sehari-hari',
+        //         'tone_color' => '#E11D1D',
+        //     ]
+        // ]);
+
         DB::table('programs')->insert([
-            ['program_name' => 'Tahsin Reguler', 'description' => 'Program Reguler', 'base_price' => 110000, 'base_sallary' => 110000, 'price' => 110000, 'max_student_in_class' => 20, 'max_sessions' => 2, 'is_open' => true, 'tone_color' => '#95D2B3'],
-            ['program_name' => 'Tahsin Premium', 'description' => 'Program Premium', 'base_price' => 150000, 'base_sallary' => 150000, 'price' => 150000, 'max_student_in_class' => 15, 'max_sessions' => 3, 'is_open' => true, 'tone_color' => '#7FBF9B'],
-            ['program_name' => 'Tahsin Expert', 'description' => 'Program Expert', 'base_price' => 190000, 'base_sallary' => 190000, 'price' => 190000, 'max_student_in_class' => 10, 'max_sessions' => 4, 'is_open' => true, 'tone_color' => '#6AAE84'],
-            ['program_name' => 'Tahsin Eksekutif', 'description' => 'Program Eksekutif', 'base_price' => 250000, 'base_sallary' => 250000, 'price' => 250000, 'max_student_in_class' => 5, 'max_sessions' => 5, 'is_open' => true, 'tone_color' => '#559C6D'],
-            ['program_name' => 'Tahfidz Reguler', 'description' => 'Program Reguler', 'base_price' => 110000, 'base_sallary' => 110000, 'price' => 110000, 'max_student_in_class' => 20, 'max_sessions' => 2, 'is_open' => true, 'tone_color' => '#A6B37D'],
-            ['program_name' => 'Tahfidz Premium', 'description' => 'Program Premium', 'base_price' => 150000, 'base_sallary' => 150000, 'price' => 150000, 'max_student_in_class' => 15, 'max_sessions' => 3, 'is_open' => true, 'tone_color' => '#8F9E6A'],
-            ['program_name' => 'Tahfidz Expert', 'description' => 'Program Expert', 'base_price' => 190000, 'base_sallary' => 190000, 'price' => 190000, 'max_student_in_class' => 10, 'max_sessions' => 4, 'is_open' => true, 'tone_color' => '#788957'],
-            ['program_name' => 'Tahfidz Eksekutif', 'description' => 'Program Eksekutif', 'base_price' => 250000, 'base_sallary' => 250000, 'price' => 250000, 'max_student_in_class' => 5, 'max_sessions' => 5, 'is_open' => true, 'tone_color' => '#627444'],
+            ['program_category_id' => 1, 'program_name' => 'Tahsin Reguler', 'description' => 'Program Reguler', 'base_price' => 110000, 'base_sallary' => 110000, 'price' => 110000, 'max_student_in_class' => 20, 'max_sessions' => 2, 'is_open' => true, 'tone_color' => '#95D2B3'],
+            ['program_category_id' => 1, 'program_name' => 'Tahsin Premium', 'description' => 'Program Premium', 'base_price' => 150000, 'base_sallary' => 150000, 'price' => 150000, 'max_student_in_class' => 15, 'max_sessions' => 3, 'is_open' => true, 'tone_color' => '#7FBF9B'],
+            ['program_category_id' => 1, 'program_name' => 'Tahsin Expert', 'description' => 'Program Expert', 'base_price' => 190000, 'base_sallary' => 190000, 'price' => 190000, 'max_student_in_class' => 10, 'max_sessions' => 4, 'is_open' => true, 'tone_color' => '#6AAE84'],
+            ['program_category_id' => 1, 'program_name' => 'Tahsin Eksekutif', 'description' => 'Program Eksekutif', 'base_price' => 250000, 'base_sallary' => 250000, 'price' => 250000, 'max_student_in_class' => 5, 'max_sessions' => 5, 'is_open' => true, 'tone_color' => '#559C6D'],
+            ['program_category_id' => 2, 'program_name' => 'Tahfidz Reguler', 'description' => 'Program Reguler', 'base_price' => 110000, 'base_sallary' => 110000, 'price' => 110000, 'max_student_in_class' => 20, 'max_sessions' => 2, 'is_open' => true, 'tone_color' => '#A6B37D'],
+            ['program_category_id' => 2, 'program_name' => 'Tahfidz Premium', 'description' => 'Program Premium', 'base_price' => 150000, 'base_sallary' => 150000, 'price' => 150000, 'max_student_in_class' => 15, 'max_sessions' => 3, 'is_open' => true, 'tone_color' => '#8F9E6A'],
+            ['program_category_id' => 2, 'program_name' => 'Tahfidz Expert', 'description' => 'Program Expert', 'base_price' => 190000, 'base_sallary' => 190000, 'price' => 190000, 'max_student_in_class' => 10, 'max_sessions' => 4, 'is_open' => true, 'tone_color' => '#788957'],
+            ['program_category_id' => 2, 'program_name' => 'Tahfidz Eksekutif', 'description' => 'Program Eksekutif', 'base_price' => 250000, 'base_sallary' => 250000, 'price' => 250000, 'max_student_in_class' => 5, 'max_sessions' => 5, 'is_open' => true, 'tone_color' => '#627444'],
         ]);
         DB::table('batches')->insert([
-            ['batch_name' => 'Batch 1', 'early_date' => '2022-01-01 00:00:00', 'start_date' => '2022-01-01 00:00:00', 'end_date' => '2022-06-30 23:59:59'],
-            ['batch_name' => 'Batch 2', 'early_date' => '2022-07-01 00:00:00', 'start_date' => '2022-07-01 00:00:00', 'end_date' => '2022-12-31 23:59:59'],
+            ['batch_name' => 'Batch 1', 'early_date' => '2025-06-01 00:00:00', 'start_date' => '2025-06-15 00:00:00', 'end_date' => '2025-06-28 23:59:59'],
         ]);
         DB::table('jobs')->insert([
             ['job_name' => 'Engineer'],

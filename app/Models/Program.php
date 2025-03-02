@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Program extends Model
@@ -79,6 +80,11 @@ class Program extends Model
     public function examReports() : HasMany
     {
         return $this->hasMany(ExamReport::class);
+    }
+
+    public function programCategory(): BelongsTo
+    {
+        return $this->belongsTo(ProgramCategory::class);
     }
 
 

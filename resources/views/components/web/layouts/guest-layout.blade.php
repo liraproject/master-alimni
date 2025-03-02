@@ -30,7 +30,7 @@
         /**
          * THIS SCRIPT REQUIRED FOR PREVENT FLICKERING IN SOME BROWSERS
          */
-        localStorage.getItem("_x_darkMode_on") === "true" &&
+        localStorage.getItem("_x_darkMode_on") === "false" &&
             document.documentElement.classList.add("dark");
     </script>
 
@@ -49,28 +49,10 @@
         <!-- Sidebar -->
         <div class="sidebar print:hidden">
             <!-- Main Sidebar -->
-            <x-web.layouts.app-partials.main-sidebar />
-
+            <x-web.layouts.app-partials.base-sidebar />
         </div>
         <!-- App Header -->
-        @switch($user->role_id)
-            @case(\App\Main\Roles::ADMIN)
-                <x-web.layouts.app-partials.headers.admin-header />
-            @break
-
-            @case(\App\Main\Roles::STUDENT)
-                <x-web.layouts.app-partials.headers.student-header />
-            @break
-
-            @case(\App\Main\Roles::TEACHER)
-                <x-web.layouts.app-partials.headers.teacher-header />
-            @break
-
-            @default
-            <x-web.layouts.app-partials.headers.base-header />
-
-        @endswitch
-
+        <x-web.layouts.app-partials.headers.base-header />
 
         <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
 
@@ -83,22 +65,8 @@
         </main>
 
         <!-- Bottom Navbar -->
-        @switch($user->role_id)
-            @case(\App\Main\Roles::ADMIN)
-                <x-web.layouts.app-partials.bottom-navbar.admin-bottom-navbar />
-            @break
+        <x-web.layouts.app-partials.bottom-navbar.base-bottom-navbar />
 
-            @case(\App\Main\Roles::STUDENT)
-                <x-web.layouts.app-partials.bottom-navbar.student-bottom-navbar />
-            @break
-
-            @case(\App\Main\Roles::TEACHER)
-                <x-web.layouts.app-partials.bottom-navbar.teacher-bottom-navbar />
-            @break
-
-            @default
-            <x-web.layouts.app-partials.bottom-navbar.base-bottom-navbar />
-        @endswitch
     </div>
 
     <!--

@@ -98,7 +98,7 @@
         </div>
 
         <!-- Bottom Links -->
-        <div class="flex flex-col items-center justify-center w-full py-3 space-y-3 ">
+        {{-- <div class="flex flex-col items-center justify-center w-full py-3 space-y-3 ">
             <!-- Settings -->
             <div class="w-full" class="overflow-hidden transition-transform duration-1000 ease-in-out">
                 <a wire:navigate href="#"
@@ -120,6 +120,6 @@
                 </a>
             </div>
 
-        </div>
+        </div> --}}
     </div>
 </div>
