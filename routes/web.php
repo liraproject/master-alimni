@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/boarding-registration', BoardingRegistration::class)->name('boarding-registration');
-Route::get('/privacy-policy', PrivacyPolicy::class)->name('guest.privacy-policy');
+Route::group(['as' => 'public.'], function () {
+    Route::get('/boarding-registration', BoardingRegistration::class)->name('boarding-registration');
+    Route::get('/privacy-policy', PrivacyPolicy::class)->name('privacy-policy');
+});
 
 Route::middleware('guest')->group(function () {
     Route::get('/', [\App\Http\Controllers\AuthController::class, 'landingView'])->name('landingView');
