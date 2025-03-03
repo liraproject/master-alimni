@@ -1,15 +1,13 @@
 <div>
 
     {{-- Welcome Sentence --}}
-    <x-slot:headerPage class="flex justify-between items-center mt-5 px-3">
+    <x-slot:headerPage class="flex items-center justify-between px-3 mt-5">
         <div>
             <h5 class="text-xs+ font-normal tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100">
                 Assalaamu'alaikum,
             </h5>
             <h2 class="text-xl font-semibold tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100">
-                {{ $user->fullname }}, Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa fuga
-                consectetur ab asperiores beatae deserunt nulla? Eveniet a incidunt at eum atque. Est veniam facere
-                dolorum commodi tempora fugit.
+                {{ $user->fullname }}
             </h2>
         </div>
         <div class="-mr-1.5 flex items-center space-x-2">
@@ -18,7 +16,7 @@
 
             <!-- Profile -->
             <button @click="$dispatch('show-profile-drawer')"
-                class="flex items-center w-full justify-center p-2 transition-transform duration-1000 ease-in-out rounded-lg hover:bg-primary/20 dark:hover:bg-navy-300/20">
+                class="flex items-center justify-center w-full p-2 transition-transform duration-1000 ease-in-out rounded-lg hover:bg-primary/20 dark:hover:bg-navy-300/20">
                 <x-web.elements.avatar image="{{ $user->photo ? asset('profil/photo/' . $user->photo) : null }}"
                     initial="{{ substr($user->fullname, 0, 2) }}" variant="circle" color="primary" rounded="full"
                     size="sm" dot="visible" />
@@ -32,7 +30,7 @@
         <div class="px-3 mt-3 swiper" x-init="$nextTick(() => new Swiper($el, { slidesPerView: 'auto', spaceBetween: 16 }))">
             <div class="swiper-wrapper">
                 <x-web.cards.card-swiper title="Tahsin" class="bg-gradient-to-bl from-amber-500 to-primary-alimni-600">
-                    <div class="flex justify-between items-center">
+                    <div class="flex items-center justify-between">
                         <p class="text-xl font-semibold tracking-wide">
                             Batch 1
                         </p>
@@ -47,7 +45,7 @@
                     </div>
                 </x-web.cards.card-swiper>
                 <x-web.cards.card-swiper title="Tahfidz" class="bg-gradient-to-bl from-amber-500 to-primary-alimni-600">
-                    <div class="flex justify-between items-center">
+                    <div class="flex items-center justify-between">
                         <p class="text-xl font-semibold tracking-wide">
                             Batch 1
                         </p>
@@ -60,7 +58,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="absolute z-2 w-full h-full bg-black/50 top-0 left-0 flex justify-center items-center">
+                    <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full z-2 bg-black/50">
                         <div class="flex flex-col gap-1">
                             <p class="text-xs text-white/80">Belum terdaftar di program ini.</p>
                             <x-web.buttons.base-button text="Daftar sekarang!" />
@@ -69,7 +67,7 @@
                 </x-web.cards.card-swiper>
                 <x-web.cards.card-swiper title="Bahasa Arab"
                     class="bg-gradient-to-bl from-amber-500 to-primary-alimni-600">
-                    <div class="flex justify-between items-center">
+                    <div class="flex items-center justify-between">
                         <p class="text-xl font-semibold tracking-wide">
                             Batch 1
                         </p>
@@ -82,7 +80,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="absolute z-2 w-full h-full bg-black/50 top-0 left-0 flex justify-center items-center">
+                    <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full z-2 bg-black/50">
                         <div class="flex flex-col gap-1">
                             <p class="text-xs text-white/80">Belum terdaftar di program ini.</p>
                             <x-web.buttons.base-button text="Daftar sekarang!" />
@@ -99,11 +97,11 @@
         <h2 class="text-xs+ font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100">
             Akses Cepat
         </h2>
-        <div class="mt-3 flex justify-between">
+        <div class="flex justify-between mt-3">
             @foreach ($this->quickMenu as $menu)
                 <a href="{{ route($menu['route']) }}" class="w-12 text-center">
                     <div class="avatar size-10">
-                        <div class="text-white is-initial mask is-squircle bg-primary">
+                        <div class="text-white is-initial mask is-squircle bg-primary-alimni-500">
                             {!! $menu['icon'] !!}
                         </div>
                     </div>
@@ -126,7 +124,7 @@
             @foreach ($quickMenu as $item)
                 <div class="flex justify-between space-x-2 rounded-lg bg-slate-100 p-2.5 dark:bg-navy-700">
                     <div class="flex flex-col justify-between flex-1">
-                        <div class="mb-6 flex justify-between">
+                        <div class="flex justify-between mb-6">
                             <div class="line-clamp-2">
                                 <a href="#"
                                     class="font-medium text-slate-700 hover:text-primary focus:text-primary dark:text-navy-100 dark:hover:text-accent-light dark:focus:text-accent-light">Tahsin
@@ -151,7 +149,7 @@
                                 <x-web.buttons.base-button
                                     @click="$dispatch('show-action-bottom', { actionBottomId: 'review' })"
                                     type="ghost" class="!size-7">
-                                    <i class="fa-regular fa-star size-7 my-auto"></i>
+                                    <i class="my-auto fa-regular fa-star size-7"></i>
                                 </x-web.buttons.base-button>
                             </div>
                         </div>
@@ -160,12 +158,12 @@
             @endforeach
         </div>
 
-        {{-- <div class="fixed bg-black/50 w-screen h-screen top-0 right-0 z-10"></div>
+        {{-- <div class="fixed top-0 right-0 z-10 w-screen h-screen bg-black/50"></div>
          <div class="fixed bottom-0 left-0 w-full bg-white shadow-lg z-[11]">
             <div class="flex justify-around p-4">
                 <!-- Action Button 1 -->
                 <button class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
                     <span class="text-xs">Action 1</span>
@@ -173,7 +171,7 @@
 
                 <!-- Action Button 2 -->
                 <button class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v8m4-4H8" />
                     </svg>
                     <span class="text-xs">Action 2</span>
@@ -181,7 +179,7 @@
 
                 <!-- Action Button 3 -->
                 <button class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                     <span class="text-xs">Action 3</span>
@@ -189,7 +187,7 @@
 
                 <!-- Action Button 4 -->
                 <button class="flex flex-col items-center text-gray-700 hover:text-blue-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
                     </svg>
                     <span class="text-xs">Action 4</span>
@@ -388,27 +386,39 @@
 </div>
 
 @push('canvas')
-    <div x-show="showDrawer" x-data="{ showDrawer: false, startY: 0, currentY: 0, expandedDrawer: false }"
+    <div class="fixed inset-0 top-0 left-0 z-[100] overflow-y-auto "
+        x-show="showDrawer" x-data="{ showDrawer: false }"
         x-on:show-action-bottom.window="($event.detail.actionBottomId === 'review') && (showDrawer = true)"
-        @keydown.window.escape="showDrawer = false">
-        {{-- Overlay Part --}}
-        <div class="fixed inset-0 z-[100] bg-slate-900/60 transition-opacity duration-200" @click="showDrawer = false"
-            x-show="showDrawer" x-transition:enter="ease-out" x-transition:enter-start="opacity-0"
-            x-transition:enter-end="opacity-100" x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
-            x-transition:leave-end="opacity-0"></div>
-        {{-- #Overlay Part --}}
+        @keydown.window.escape="showDrawer = false"
+    >
 
-        <div class="fixed inset-x-0 bottom-0 z-[101] h-64 bg-white dark:bg-navy-700 rounded-t-xl max-h-[100%] overflow-y-auto transition-all duration-300"
-            :class="{ 'h-[80vh]': expandedDrawer }" x-ref="bodyDrawer" x-show="showDrawer"
+        <div class="h-[60vh] -z-50" @click="showDrawer = false"></div>
+
+
+        <div class="min-h-[40vh] inset-0 bg-white z-[101] dark:bg-navy-700 rounded-t-xl transition-all duration-300 relative"
+            x-show="showDrawer"
             x-transition:enter="ease-out duration-300" x-transition:enter-start="translate-y-full"
             x-transition:enter-end="translate-y-0" x-transition:leave="ease-in duration-300"
             x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full"
             x-transition:enter="transition-all ease-out duration-300"
             x-transition:leave="transition-all ease-in duration-300">
 
-            <div class="w-full flex justify-center pt-3 py-5 cursor-pointer" @click="expandedDrawer = !expandedDrawer">
+            {{-- Close Button --}}
+            <div class="absolute -top-2 -right-2 p-6 z-[200] cursor-pointer" @click="showDrawer = false"
+                x-show="showDrawer" x-transition:enter="ease-out" x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100" x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 size-5 hover:text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </div>
+            {{-- #Close Button --}}
+
+            {{-- Divider --}}
+            <div class="flex justify-center w-full py-5 pt-3 cursor-pointer">
                 <div class="rounded-full bg-gray-300 h-1.5 w-16"></div>
             </div>
+            {{-- #Divider --}}
 
             <div class="px-4">
                 <h2 class="text-lg font-semibold text-black">Berikan Rating </h2>
@@ -424,12 +434,12 @@
                 </div>
                 <div class="mt-4">
                     <p class="text-sm font-medium text-slate-700 dark:text-navy-100">Rating</p>
-                    <div class="flex items-center space-x-1 mt-2">
+                    <div class="flex items-center mt-2 space-x-1">
                         <input type="range" min="1" max="5" step="1" value="3"
                             class="hidden" id="rating-range" />
                         <div class="flex space-x-1" id="star-container">
                             @for ($i = 1; $i <= 5; $i++)
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 star"
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 star"
                                     fill="currentColor" viewBox="0 0 24 24" data-value="{{ $i }}">
                                     <path
                                         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
@@ -440,7 +450,297 @@
                 </div>
             </div>
 
+
+
+            <div class="h-24">
+                <img class="object-cover object-center w-full h-full" src="{{ asset('images/800x600.png') }}" alt="image" />
+            </div>
+            <div class="flex px-5 space-x-5">
+                <div class="-mt-5 avatar size-20">
+                    <img class="border-2 border-white rounded-full dark:border-navy-700" src="{{ asset('images/200x200.png') }}" alt="avatar" />
+                </div>
+                <div class="w-full mt-2">
+                    <div class="flex justify-between space-x-3">
+                        <h4 class="text-base font-medium text-slate-700 line-clamp-1 dark:text-navy-50">
+                            John Doe
+                        </h4>
+                        <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })" @click.outside="if(isShowPopper) isShowPopper = false"
+                             class="inline-flex">
+                            <button x-ref="popperRef" @click="isShowPopper = !isShowPopper"
+                                    class="btn -mr-1.5 size-6 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                </svg>
+                            </button>
+
+                            <div x-ref="popperRoot" class="popper-root" :class="isShowPopper && 'show'">
+                                <div class="popper-box rounded-md border border-slate-150 bg-white py-1.5 font-inter dark:border-navy-500 dark:bg-navy-700">
+                                    <ul>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Another
+                                                Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Something
+                                                else</a>
+                                        </li>
+                                    </ul>
+                                    <div class="h-px my-1 bg-slate-150 dark:bg-navy-500"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Separated
+                                                Link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#"
+                       class="cursor-pointer text-xs+ text-primary hover:text-primary-focus dark:text-accent-light dark:hover:text-accent">@johndoe</a>
+                </div>
+            </div>
+            <div class="h-px mx-5 my-4 bg-slate-200 dark:bg-navy-500"></div>
+            <ul class="grow space-y-1.5 px-5 font-inter font-medium">
+                <li>
+                    <a class="flex items-center space-x-2 rounded-full bg-primary px-5 py-2.5 tracking-wide text-white outline-none transition-all dark:bg-accent"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        <span>Getting start</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                        </svg>
+
+                        <span>Shipping</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                        <span>Payments</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+                        </svg>
+                        <span>Returns</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span>My Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             viewBox="0 0 24 24" fill="none">
+                            <path
+                                  d="M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
+                                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                  stroke-linejoin="round" />
+                            <path
+                                  d="M12.0449 15.8486C12.625 15.8486 13.1318 15.6729 13.5654 15.3213C13.999 14.9697 14.2393 14.5303 14.2861 14.0029H15.8242C15.7949 14.5479 15.6074 15.0664 15.2617 15.5586C14.916 16.0508 14.4531 16.4434 13.873 16.7363C13.2988 17.0293 12.6895 17.1758 12.0449 17.1758C10.75 17.1758 9.71875 16.7451 8.95117 15.8838C8.18945 15.0166 7.80859 13.833 7.80859 12.333V12.0605C7.80859 11.1348 7.97852 10.3115 8.31836 9.59082C8.6582 8.87012 9.14453 8.31055 9.77734 7.91211C10.416 7.51367 11.1689 7.31445 12.0361 7.31445C13.1025 7.31445 13.9873 7.63379 14.6904 8.27246C15.3994 8.91113 15.7773 9.74023 15.8242 10.7598H14.2861C14.2393 10.1445 14.0049 9.64062 13.583 9.24805C13.167 8.84961 12.6514 8.65039 12.0361 8.65039C11.21 8.65039 10.5684 8.94922 10.1113 9.54688C9.66016 10.1387 9.43457 10.9971 9.43457 12.1221V12.4297C9.43457 13.5254 9.66016 14.3691 10.1113 14.9609C10.5625 15.5527 11.207 15.8486 12.0449 15.8486Z"
+                                  fill="currentColor" />
+                        </svg>
+                        <span>Copyright &amp; Legal</span>
+                    </a>
+                </li>
+            </ul>
+
+
+
+            <div class="h-24">
+                <img class="object-cover object-center w-full h-full" src="{{ asset('images/800x600.png') }}" alt="image" />
+            </div>
+            <div class="flex px-5 space-x-5">
+                <div class="-mt-5 avatar size-20">
+                    <img class="border-2 border-white rounded-full dark:border-navy-700" src="{{ asset('images/200x200.png') }}" alt="avatar" />
+                </div>
+                <div class="w-full mt-2">
+                    <div class="flex justify-between space-x-3">
+                        <h4 class="text-base font-medium text-slate-700 line-clamp-1 dark:text-navy-50">
+                            John Doe
+                        </h4>
+                        <div x-data="usePopper({ placement: 'bottom-end', offset: 4 })" @click.outside="if(isShowPopper) isShowPopper = false"
+                             class="inline-flex">
+                            <button x-ref="popperRef" @click="isShowPopper = !isShowPopper"
+                                    class="btn -mr-1.5 size-6 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                </svg>
+                            </button>
+
+                            <div x-ref="popperRoot" class="popper-root" :class="isShowPopper && 'show'">
+                                <div class="popper-box rounded-md border border-slate-150 bg-white py-1.5 font-inter dark:border-navy-500 dark:bg-navy-700">
+                                    <ul>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Another
+                                                Action</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Something
+                                                else</a>
+                                        </li>
+                                    </ul>
+                                    <div class="h-px my-1 bg-slate-150 dark:bg-navy-500"></div>
+                                    <ul>
+                                        <li>
+                                            <a href="#"
+                                               class="flex items-center h-8 px-3 pr-8 font-medium tracking-wide transition-all outline-none hover:bg-slate-100 hover:text-slate-800 focus:bg-slate-100 focus:text-slate-800 dark:hover:bg-navy-600 dark:hover:text-navy-100 dark:focus:bg-navy-600 dark:focus:text-navy-100">Separated
+                                                Link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#"
+                       class="cursor-pointer text-xs+ text-primary hover:text-primary-focus dark:text-accent-light dark:hover:text-accent">@johndoe</a>
+                </div>
+            </div>
+            <div class="h-px mx-5 my-4 bg-slate-200 dark:bg-navy-500"></div>
+            <ul class="grow space-y-1.5 px-5 font-inter font-medium">
+                <li>
+                    <a class="flex items-center space-x-2 rounded-full bg-primary px-5 py-2.5 tracking-wide text-white outline-none transition-all dark:bg-accent"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                        <span>Getting start</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                        </svg>
+
+                        <span>Shipping</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
+                        <span>Payments</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M16 15v-1a4 4 0 00-4-4H8m0 0l3 3m-3-3l3-3m9 14V5a2 2 0 00-2-2H6a2 2 0 00-2 2v16l4-2 4 2 4-2 4 2z" />
+                        </svg>
+                        <span>Returns</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <span>My Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="group flex space-x-2 rounded-full px-5 py-2.5 tracking-wide outline-none transition-all hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary dark:hover:bg-accent-light/15 dark:hover:text-accent-light dark:focus:bg-accent-light/15 dark:focus:text-accent-light"
+                       href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="transition-colors size-5 text-slate-400 group-hover:text-primary group-focus:text-primary dark:text-navy-300 dark:group-hover:text-accent dark:group-focus:text-accent"
+                             viewBox="0 0 24 24" fill="none">
+                            <path
+                                  d="M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
+                                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                  stroke-linejoin="round" />
+                            <path
+                                  d="M12.0449 15.8486C12.625 15.8486 13.1318 15.6729 13.5654 15.3213C13.999 14.9697 14.2393 14.5303 14.2861 14.0029H15.8242C15.7949 14.5479 15.6074 15.0664 15.2617 15.5586C14.916 16.0508 14.4531 16.4434 13.873 16.7363C13.2988 17.0293 12.6895 17.1758 12.0449 17.1758C10.75 17.1758 9.71875 16.7451 8.95117 15.8838C8.18945 15.0166 7.80859 13.833 7.80859 12.333V12.0605C7.80859 11.1348 7.97852 10.3115 8.31836 9.59082C8.6582 8.87012 9.14453 8.31055 9.77734 7.91211C10.416 7.51367 11.1689 7.31445 12.0361 7.31445C13.1025 7.31445 13.9873 7.63379 14.6904 8.27246C15.3994 8.91113 15.7773 9.74023 15.8242 10.7598H14.2861C14.2393 10.1445 14.0049 9.64062 13.583 9.24805C13.167 8.84961 12.6514 8.65039 12.0361 8.65039C11.21 8.65039 10.5684 8.94922 10.1113 9.54688C9.66016 10.1387 9.43457 10.9971 9.43457 12.1221V12.4297C9.43457 13.5254 9.66016 14.3691 10.1113 14.9609C10.5625 15.5527 11.207 15.8486 12.0449 15.8486Z"
+                                  fill="currentColor" />
+                        </svg>
+                        <span>Copyright &amp; Legal</span>
+                    </a>
+                </li>
+            </ul>
+
+
+
+
         </div>
+
+        {{-- Overlay Part --}}
+        <div class="fixed inset-0 top-0 left-0 transition-opacity duration-200 -z-2 bg-slate-900/60"
+            x-show="showDrawer" x-transition:enter="ease-out" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="ease-in" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"></div>
+        {{-- #Overlay Part --}}
     </div>
 @endpush
 

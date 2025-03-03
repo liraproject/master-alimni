@@ -14,6 +14,7 @@ use App\Livewire\Student\ReportCard\ReportCardStudent;
 use App\Livewire\Student\Tahfidz\History\HistoryTahfidzStudent;
 use App\Livewire\Student\Tahfidz\Material\MaterialTahfidzStudent;
 use App\Livewire\Student\Tahfidz\Murajaah\MurajaahTahfidzStudent;
+use App\Livewire\Student\Tahsin\History\Detail\DetailHistoryTahsinStudent;
 use App\Livewire\Student\Tahsin\History\HistoryTahsinStudent;
 use App\Livewire\Student\Tahsin\Material\MaterialTahsinStudent;
 use Illuminate\Support\Facades\Route;
@@ -38,6 +39,7 @@ Route::group(['middleware' => ['auth', 'student'], 'prefix' => 'student', 'as' =
         });
         Route::get('/history', HistoryTahsinStudent::class)->name('history');
         Route::group(['prefix' => 'history', 'as' => 'history.'], function () {
+            Route::get('/{id}/detail/', DetailHistoryTahsinStudent::class)->name('detail');
             // child route, ex Detail History Tahsin
         });
     });

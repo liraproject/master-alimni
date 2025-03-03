@@ -45,11 +45,13 @@
 </head>
 
 <body x-data x-bind="$store.global.documentBody"
-    class="@isset($isSidebarPanelOpen) {{ $isSidebarPanelOpen === 'true' ? 'is-sidebar-panel-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset  @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset">
+    class="@isset($isSidebarPanelOpen) {{ $isSidebarPanelOpen === 'true' ? 'is-sidebar-panel-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset  @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset bg-gradient-to-tr from-primary-alimni-400  via-primary-alimni-200 to-amber-100" >
 
+    <div class="fixed top-0 left-0 w-screen h-screen bg-top bg-contain -z-5 bg-origin-content backdrop-blur-xl" style="background-image: url('{{ asset('images/bg-pattern-1.svg') }}')"></div>
+    <div class="fixed top-0 left-0 w-screen h-screen backdrop-blur-xl -z-4"></div>
 
     <!-- Page Wrapper -->
-    <div id="root" class="flex min-h-100vh grow bg-slate-50 dark:bg-navy-900" x-cloak x-data="{ isSidebarExpanded: $store.global.isSidebarExpanded }">
+    <div id="root" class="flex min-h-100vh grow dark:bg-navy-900" x-cloak x-data="{ isSidebarExpanded: $store.global.isSidebarExpanded }">
 
         <!-- App Header -->
         @switch($user->role_id)
