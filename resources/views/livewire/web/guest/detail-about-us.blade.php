@@ -134,7 +134,7 @@
                                     <img class="img-fluid rounded box-shadow" src="{{ asset('assets/images/team/Profile-lead.png') }}" alt="">
                                     {{-- <a class="team-link" href="team-single.html"><i class="la la-external-link"></i></a> --}}
                                 </div>
-                                <div class="team-description"> <span>Manager</span>
+                                <div class="team-description"> <span>Founder</span>
                                     <h5>Alendia Desta Setiawan</h5>
                                     <div class="social-icons social-colored circle team-social-icon">
                                         <ul>
@@ -162,7 +162,7 @@
                                     {{-- <a class="team-link" href="team-single.html"><i
                                             class="la la-external-link"></i></a> --}}
                                 </div>
-                                <div class="team-description"> <span>Manager</span>
+                                <div class="team-description"> <span>CEO</span>
                                     <h5>Al Hikam Sabillurrosidin</h5>
                                     <div class="social-icons social-colored circle team-social-icon">
                                         <ul>
@@ -189,7 +189,7 @@
                                     <img class="img-fluid rounded box-shadow" src="{{ asset('assets/images/team/profile.png') }}" alt="">
                                         {{-- <a class="team-link" href="team-single.html"><i class="la la-external-link"></i></a> --}}
                                 </div>
-                                <div class="team-description"> <span>Manager</span>
+                                <div class="team-description"> <span>CTO</span>
                                     <h5>Miftahul Khoir</h5>
                                     <div class="social-icons social-colored circle team-social-icon">
                                         <ul>
@@ -216,7 +216,7 @@
                                     <img class="img-fluid rounded box-shadow" src="{{ asset('assets/images/team/profile.png') }}" alt="">
                                         {{-- <a class="team-link" href="team-single.html"><i class="la la-external-link"></i></a> --}}
                                 </div>
-                                <div class="team-description"> <span>Manager</span>
+                                <div class="team-description"> <span>CMO</span>
                                     <h5>Masyaa'il Khilmi</h5>
                                     <div class="social-icons social-colored circle team-social-icon">
                                         <ul>
