@@ -89,7 +89,7 @@
                         <span>Dont have Account?</span>
 
                         <a class="transition-colors text-primary hover:text-primary-focus dark:text-accent-light dark:hover:text-accent"
-                            href="{{ route('registerView') }}">Create account</a>
+                            href="{{ route('public.boarding-registration') }}">Create account</a>
                     </p>
                 </div>
                 <div class="flex items-center space-x-3 my-7">

@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         return view('landing-page');
     }
-    
+
     public function loginView()
     {
         return view('login');
@@ -25,9 +25,16 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make([
+            'email' => $request->email,
+            'password' => $request->password,
+        ], [
             'email' => ['required', 'exists:users'],
             'password' => ['required'],
+        ], [
+            'email.exists' => 'Username tidak ditemukan',
+            'password.required' => 'Kata sandi tidak boleh kosong',
+            'email.required' => 'Username tidak boleh kosong',
         ]);
 
         if ($validator->fails()) {
@@ -53,39 +60,11 @@ class AuthController extends Controller
             }
         } else {
             $validator->errors()->add(
-                'password', 'The password does not match with username'
+                'password', 'Kata sandi tidak sesuai dengan username',
             );
 
             return redirect()->back()->withErrors($validator)->withInput();
         }
-    }
-
-    public function registerView()
-    {
-        return view('register');
-    }
-
-    public function register(Request $request)
-    {
-
-        $validator = Validator::make($request->all(), [
-            'name' => ['required', 'string'],
-            'email' => ['required', 'unique:users'],
-            'password' => ['required', 'confirmed', Password::min(7)],
-        ]);
-
-        $validated = $validator->validated();
-
-        $user = User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'role_id' => 2,
-            'password' => Hash::make($validated['password']),
-        ]);
-
-        Auth::login($user);
-
-        return redirect()->route('student.dashboard');
     }
 
     public function logout()
