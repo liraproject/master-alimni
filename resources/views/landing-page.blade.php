@@ -25,8 +25,8 @@
                         Jadikanlah <b class="text-theme">Al Qur’an</b> sebagai <b class="text-theme">penyejuk hatimu, cahaya di dadamu, penghilang kesedihanmu </b> dan
                         <b class="text-theme">pelipur bagi kesusahanmu</b></p>
                     <a class="btn btn-theme btn-circle" href="{{ route('aboutUs') }}" data-text="Selengkapnya">
-                        <span>L</span><span>e</span><span>a</span><span>r</span><span>n</span>
-                        <span> </span><span>M</span><span>o</span><span>r</span><span>e</span>
+                        <span>P</span><span>r</span><span>o</span><span>f</span><span>i</span><span>l</span>
+                        <span> </span><span>A</span><span>l</span><span>i</span><span>m</span><span>n</span><span>i</span>
                     </a>
                 </div>
             </div>
