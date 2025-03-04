@@ -1,5 +1,5 @@
 <div class="place-items-center">
-    <div class="py-10 text-center lg:py-6 mt-5">
+    <div class="py-10 text-center lg:py-6">
         <p class="text-sm uppercase">Sudah siap menjadi santri?</p>
         <h3 class="mt-1 text-xl font-semibold text-slate-600 dark:text-navy-100">
             Pilih program anda disini!

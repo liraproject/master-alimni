@@ -46,7 +46,7 @@
                 </button>
 
                 <!-- Notification-->
-                <div x-effect="if($store.global.isSearchbarActive) isShowPopper = false" x-data="usePopper({ placement: 'bottom-end', offset: 12 })"
+                {{-- <div x-effect="if($store.global.isSearchbarActive) isShowPopper = false" x-data="usePopper({ placement: 'bottom-end', offset: 12 })"
                     @click.outside="if(isShowPopper) isShowPopper = false" class="flex">
                     <button @click="isShowPopper = !isShowPopper" x-ref="popperRef"
                         class="relative p-0 rounded-full btn size-8 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25">
@@ -480,7 +480,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 <!-- Profile -->
                 @if (Auth::check())

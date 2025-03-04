@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Http\View\Composers\GuestSidebarComposer;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -25,7 +24,8 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', 'App\Http\View\Composers\SidebarComposer');
+        View::composer('components.web.layouts.app-partials.base-sidebar', 'App\Http\View\Composers\GuestSidebarComposer');
+        View::composer('components.web.layouts.app-partials.main-sidebar', 'App\Http\View\Composers\SidebarComposer');
         View::composer('*', 'App\Http\View\Composers\MasterDataComposer');
     }
 }

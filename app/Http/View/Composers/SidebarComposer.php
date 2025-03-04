@@ -33,8 +33,6 @@ class SidebarComposer
                 case 3:
                     $view->with('menu', TeacherMenu::all());
                     break;
-                default:
-                    $view->with('menu', GuestMenu::all());
             }
 
             $view->with('pageName', $pageName);
