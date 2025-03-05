@@ -2,9 +2,6 @@
     <div class="fixed top-0 hidden p-6 lg:block lg:px-12">
         <a href="#" class="flex items-center space-x-2">
             <img class="size-12" src="{{ asset('logo/alimni-logo.svg') }}" alt="logo" />
-            <p class="text-xl font-semibold uppercase text-slate-700 dark:text-navy-100">
-                ALIMNI
-            </p>
         </a>
     </div>
     <div class="hidden w-full place-items-center lg:grid">
@@ -21,10 +18,10 @@
                 <img class="mx-auto size-16 lg:hidden" src="{{ asset('logo/alimni-logo.svg') }}" alt="logo" />
                 <div class="mt-4">
                     <h2 class="text-2xl font-semibold text-slate-600 dark:text-navy-100">
-                        Welcome Back
+                        Alimni Learning Center
                     </h2>
                     <p class="text-slate-400 dark:text-navy-300">
-                        Silahkan Masukkan Username dan Password
+                        Silahkan masuk dan mulai perjalanan anda bersama Al-Qur'an
                     </p>
                 </div>
             </div>
@@ -78,11 +75,11 @@
                     </label>
                     <a href="#"
                         class="text-xs transition-colors text-slate-400 line-clamp-1 hover:text-slate-800 focus:text-slate-800 dark:text-navy-300 dark:hover:text-navy-100 dark:focus:text-navy-100">Lupa
-                        Password?</a>
+                        Kata Sandi?</a>
                 </div>
                 <button type="submit"
                     class="w-full h-10 mt-10 font-medium text-white btn bg-primary hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
-                    Sign In
+                    Masuk
                 </button>
                 <div class="mt-4 text-center text-xs+">
                     <p class="line-clamp-1">
