@@ -5,7 +5,7 @@
                 <div class="col-lg-12">
                     <!-- Navbar -->
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand logo" href="index.html">
+                        <a class="navbar-brand logo" href="/#hero">
                             <img id="logo-img" class="img-fluid"
                                 src="{{ asset('assets/images/logo-customizer/logo-alimni-1.png') }}" alt="">
                         </a>
@@ -20,19 +20,32 @@
                             <ul class="nav navbar-nav mx-auto">
                                 <!-- Home -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#hero">Home</a>
+                                    <a class="nav-link" href="{{request()->routeIs('landing-view') ? '#hero' : '/#hero' }}" >Home</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#fitur">Keunggulan</a>
+                                    <a class="nav-link " href="{{request()->routeIs('landing-view') ? '#about' : '/#about' }}">Profil</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#list-program">Program</a>
+                                    <a class="nav-link " href="{{request()->routeIs('landing-view') ? '#fitur' : '/#fitur' }}">Keunggulan</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" href="#list-program">Program</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ route('program-tahsin') }}">Tahsin</a>
+                                        </li>
+                                        <li><a href="#">Tahfidz</a>
+                                        </li>
+                                        <li><a href="#">Tilawah</a>
+                                        </li>
+                                        <li><a href="#">Bahasa Arab</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#price-list">Biaya</a>
+                                    <a class="nav-link " href="{{request()->routeIs('landing-view') ? '#price-list' : '/#price-list' }}">Biaya</a>
                                 </li>
                                 <li class="nav-item ">
-                                    <a class="nav-link " href="#contact" >Kontak</a>
+                                    <a class="nav-link " href="{{request()->routeIs('landing-view') ? '#contact' : '/#contact' }}">Kontak</a>
                                 </li>
                             </ul>
                         </div>
