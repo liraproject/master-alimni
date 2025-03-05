@@ -26,7 +26,7 @@ Route::middleware('guest')->group(function () {
 
 Route::get('/', [\App\Http\Controllers\AuthController::class, 'landingView'])->name('landing-view');
 Route::get('/program-tahsin', DetailProgram::class)->name('program-tahsin');
-Route::get('/tentang-kami', DetailAboutUs::class)->name('about-us');
+Route::get('/about-us', DetailAboutUs::class)->name('about-us');
 
 Route::middleware('auth')->group(function () {
     Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
