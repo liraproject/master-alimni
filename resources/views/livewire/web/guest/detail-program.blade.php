@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb" class="page-breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="{{ route('landingView') }}">Program</a>
+                                <a href="{{ route('landing-view') }}">Program</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">Program Tahsin</li>
                         </ol>

@@ -24,7 +24,7 @@
                         akan membuat anda semakin nyaman <b class="text-theme">bersahabat dengan Al-Qur’an.</b>
                         Jadikanlah <b class="text-theme">Al Qur’an</b> sebagai <b class="text-theme">penyejuk hatimu, cahaya di dadamu, penghilang kesedihanmu </b> dan
                         <b class="text-theme">pelipur bagi kesusahanmu</b></p>
-                    <a class="btn btn-theme btn-circle" href="{{ route('aboutUs') }}" data-text="Selengkapnya">
+                    <a class="btn btn-theme btn-circle" href="{{ route('about-us') }}" data-text="Selengkapnya">
                         <span>P</span><span>r</span><span>o</span><span>f</span><span>i</span><span>l</span>
                         <span> </span><span>A</span><span>l</span><span>i</span><span>m</span><span>n</span><span>i</span>
                     </a>

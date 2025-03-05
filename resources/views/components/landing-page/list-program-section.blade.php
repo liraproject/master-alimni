@@ -26,7 +26,7 @@
                 <div class="row">
                     {{-- Tahsin --}}
                     <div class="col-lg-6 col-md-6">
-                        <a href="{{ route('programTashsin') }}" class="text-dark">
+                        <a href="{{ route('program-tahsin') }}" class="text-dark">
                             <div class="featured-item style-3">
                                 <div class="featured-icon">
                                     <i class="fab fa-readme"></i>
@@ -38,7 +38,7 @@
                                     <p>
                                         Program ini dirancang untuk membantu anda <b class="text-theme">membaca Al-Qur'an dengan lancar dan tepat</b> sesuai tajwid dan makhraj yang benar
                                         <br/>
-                                        <a href="{{ route('programTashsin') }}"><i>Selengkapnya ></i></a>
+                                        <a href="{{ route('program-tahsin') }}"><i>Selengkapnya ></i></a>
                                     </p>
                                 </div>
                             </div>
