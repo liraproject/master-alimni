@@ -19,11 +19,11 @@ export default {
         document.body.classList.contains("is-sidebar-panel-open") &&
         Alpine.store("breakpoints").xlAndUp;
 
-      Alpine.effect(() => {
-        this.isDarkModeEnabled
-          ? document.documentElement.classList.add("dark")
-          : document.documentElement.classList.remove("dark");
-      });
+    //   Alpine.effect(() => {
+    //     this.isDarkModeEnabled
+    //       ? document.documentElement.classList.add("dark")
+    //       : document.documentElement.classList.remove("dark");
+    //   });
 
       Alpine.effect(() => {
         this.isMonochromeModeEnabled

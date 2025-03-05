@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Main\Role;
+use App\Main\Roles;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,11 +19,11 @@ class RedirectIfAuthenticated
     {
         if (Auth::check()) {
             $user = Auth::user();
-            if ($user->role_id == Role::ADMIN) {
+            if ($user->role_id == Roles::ADMIN) {
                 return redirect('/admin/dashboard');
-            } elseif ($user->role_id == Role::STUDENT) {
+            } elseif ($user->role_id == Roles::STUDENT) {
                 return redirect('/student/dashboard');
-            } elseif ($user->role_id == Role::TEACHER) {
+            } elseif ($user->role_id == Roles::TEACHER) {
                 return redirect('/teacher/dashboard');
             }
         }

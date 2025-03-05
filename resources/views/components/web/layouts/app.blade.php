@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
 
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('logo/alimni-logo.svg') }}" />
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name') }} @isset($title)
-            - {{ $title }}
-        @endisset
+    <title>
+        @isset($title)
+            {{ $title }} -
+        @endisset {{ config('app.name') }}
     </title>
 
     @livewireStyles
@@ -26,6 +27,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
+
     <script>
         /**
          * THIS SCRIPT REQUIRED FOR PREVENT FLICKERING IN SOME BROWSERS
@@ -33,7 +35,6 @@
         localStorage.getItem("_x_darkMode_on") === "true" &&
             document.documentElement.classList.add("dark");
     </script>
-
 
     @stack('head')
 
@@ -50,18 +51,26 @@
         <!-- Sidebar -->
         <div class="sidebar print:hidden">
             <!-- Main Sidebar -->
-            <x-web.layouts.app-partials.main-sidebar></x-web.layouts.app-partials.main-sidebar>
+            <x-web.layouts.partials.main-sidebar />
 
         </div>
-
         <!-- App Header -->
-        <x-web.layouts.app-partials.headers.header></x-web.layouts.app-partials.headers.header>
+        @switch($user->role_id)
+            @case(\App\Main\Roles::ADMIN)
+                <x-web.layouts.partials.headers.admin-header />
+            @break
 
-        <!-- Mobile Searchbar -->
-        {{-- <x-web.layouts.app-partials.mobile-searchbar></x-web.layouts.app-partials.mobile-searchbar> --}}
+            @case(\App\Main\Roles::STUDENT)
+                <x-web.layouts.partials.headers.student-header />
+            @break
 
-        <!-- Right Sidebar -->
-        {{-- <x-web.layouts.app-partials.right-sidebar></x-web.layouts.app-partials.right-sidebar> --}}
+            @case(\App\Main\Roles::TEACHER)
+                <x-web.layouts.partials.headers.teacher-header />
+            @break
+
+            @default
+                <x-web.layouts.partials.headers.base-header />
+        @endswitch
 
         <main class='main-content w-full px-[var(--margin-x)] min-h-[100vh] pb-8'>
 
@@ -72,8 +81,6 @@
             {{ $slot }}
 
         </main>
-
-        <x-web.layouts.app-partials.bottom-navbar.bottom-navbar />
 
     </div>
 
@@ -93,18 +100,16 @@
     </script>
 
     <script>
-        function handleScrollSticky() {
+        function handleScrollSticky(domId) {
             let lastScrollTop = 0;
-            const bottomNavbar = document.getElementById('bottom-navbar');
+            const bottomNavbar = document.getElementById(domId);
 
             window.addEventListener('scroll', function() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
                 if (scrollTop > lastScrollTop) {
-                    // Scrolling down
                     bottomNavbar.classList.remove('show');
                 } else {
-                    // Scrolling up
                     bottomNavbar.classList.add('show');
                 }
 
@@ -113,15 +118,15 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            handleScrollSticky();
+            handleScrollSticky('bottom-navbar');
         });
 
         document.addEventListener('livewire:navigated', function() {
-            handleScrollSticky();
+            handleScrollSticky('bottom-navbar');
         });
     </script>
 
-    @stack('script')
+    @stack('scripts')
 
 </body>
 

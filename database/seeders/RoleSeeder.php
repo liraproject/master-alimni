@@ -14,15 +14,15 @@ class RoleSeeder extends Seeder
     {
         DB::table('roles')->insert([
             [
-                'name' => 'admin',
+                'role_name' => 'admin',
                 'access' => 'Administrator'
             ],
             [
-                'name' => 'student',
+                'role_name' => 'student',
                 'access' => 'Student User'
             ],
             [
-                'name' => 'teacher',
+                'role_name' => 'teacher',
                 'access' => 'Teacher User'
             ],
         ]);
