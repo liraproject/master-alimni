@@ -61,6 +61,12 @@ import ApexCharts from "apexcharts";
 */
 import * as Gridjs from "gridjs";
 
+/*
+    Light Box Photo Gallery
+    @see https://biati-digital.github.io/glightbox/
+*/
+import GLightbox from 'glightbox';
+
 //  Forms Libraries
 import "@caneara/iodine"; // @see https://github.com/caneara/iodine
 import * as FilePond from "filepond"; // @see https://pqina.nl/filepond/
@@ -124,6 +130,7 @@ window.FilePond = FilePond;
 window.flatpickr = flatpickr;
 window.Quill = Quill;
 window.Tom = Tom;
+window.GLightbox = GLightbox;
 
 window.Alpine = Alpine;
 window.Livewire = Livewire;

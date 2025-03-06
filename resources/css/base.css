@@ -275,3 +275,23 @@ code.inline-code {
 .star-filled {
     color: #fbbf24; /* Warna kuning untuk bintang yang terisi */
 }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-pagination-bullet-active {
+    @apply !bg-primary
+}

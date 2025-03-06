@@ -4,7 +4,7 @@
 
 <nav id="header" class="header print:hidden">
     <!-- App Header  -->
-    <div class="relative flex w-full bg-white header-container dark:bg-navy-750 print:hidden">
+    <div class="relative flex w-full pt-4 -mt-4 bg-white header-container dark:bg-navy-750 print:hidden">
         <!-- Header Items -->
         <div class="flex items-center justify-between w-full">
             <!-- Left: Sidebar Toggle Button -->
@@ -12,11 +12,10 @@
                 @if ($routeBackButton != null)
                     <div class="size-7">
                         <a @if ($routeBackButton) wire:navigate href="{{ route($routeBackButton) }}" @else @click="window.history.back()" @endif
-                            class="back-button ml-0.5 flex size-7 flex-col justify-center space-y-1.5 text-primary outline-none focus:outline-none dark:text-accent-light/80 md:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 19l-7-7 7-7" />
+                            class="back-button ml-0.5 flex size-7 flex-col justify-center space-y-1.5 text-slate-800 outline-none focus:outline-none dark:text-accent-light/80 md:hidden">
+                            <svg class="size-4" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" />
                             </svg>
                         </a>
                     </div>
@@ -52,7 +51,7 @@
 
                 <!-- Profile -->
                 <button @click="$dispatch('show-profile-drawer')"
-                    class="flex items-center w-full justify-center p-2 transition-transform duration-1000 ease-in-out rounded-lg hover:bg-primary/20 dark:hover:bg-navy-300/20">
+                    class="flex items-center justify-center w-full p-2 transition-transform duration-1000 ease-in-out rounded-lg hover:bg-primary/20 dark:hover:bg-navy-300/20">
                     <x-web.elements.avatar image="{{ $user->photo ? asset('profil/photo/' . $user->photo) : null }}"
                         initial="{{ substr($user->fullname, 0, 2) }}" variant="circle" color="primary" rounded="full"
                         size="sm" dot="visible" />

@@ -87,7 +87,7 @@
                             {{-- :class="isSidebarExpanded ? 'justify-start' : 'justify-center'" --}}
                         >
                             <h4 class="flex items-center gap-2">
-                                <div class="object-cover p-1 bg-gray-200 rounded-full dark:bg-navy-700">
+                                <div class="object-cover p-1">
                                     {!! $menu['icon'] ?? '' !!}
                                 </div>
                                 <p x-show="isSidebarExpanded" class="overflow-hidden line-clamp-1 text-clip"

@@ -10,12 +10,22 @@
 @php
     $baseClass = 'badge font-medium';
     $roundedClass = 'rounded-' . $rounded;
+    $textClass = match ($color) {
+        'primary' => 'text-white',
+        'secondary' => 'text-slate-600',
+        'info' => 'text-white',
+        'success' => 'text-white',
+        'warning' => 'text-white',
+        'error' => 'text-white',
+        'ghost' => 'text-' . $color . ' dark:text-' . $color . '-light',
+        default => 'text-white',
+    };
     $typeClass = match ($type) {
-        'default' => 'bg-' . $color . ' text-white',
+        'default' => 'bg-' . $color . ' ' . $textClass,
         'soft-color' => 'bg-' . $color . '/10 text-' . $color . ' dark:bg-' . $color . '-light/15 dark:text-' . $color . '-light',
-        'glow' => 'bg-' . $color . ' text-white shadow-soft shadow-' . $color . '/50',
+        'glow' => 'bg-' . $color . ' ' . $textClass . ' shadow-soft shadow-' . $color . '/50',
         'outlined' => 'border border-' . $color . ' text-' . $color . ' dark:border-' . $color . '-light dark:text-' . $color . '-light',
-        default => 'bg-' . $color . ' text-white',
+        default => 'bg-' . $color . ' ' . $textClass,
     };
 @endphp
 

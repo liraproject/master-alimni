@@ -39,7 +39,7 @@ Route::group(['middleware' => ['auth', 'student'], 'prefix' => 'student', 'as' =
         });
         Route::get('/history', HistoryTahsinStudent::class)->name('history');
         Route::group(['prefix' => 'history', 'as' => 'history.'], function () {
-            Route::get('/{id}/detail/', DetailHistoryTahsinStudent::class)->name('detail');
+            Route::get('/{id}/detail', DetailHistoryTahsinStudent::class)->name('detail');
             // child route, ex Detail History Tahsin
         });
     });

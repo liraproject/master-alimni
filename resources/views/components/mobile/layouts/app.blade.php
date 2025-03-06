@@ -1,5 +1,5 @@
 @props([
-    'routeBackButton' => null
+    'routeBackButton' => null,
 ])
 
 <!doctype html>
@@ -45,9 +45,17 @@
 </head>
 
 <body x-data x-bind="$store.global.documentBody"
-    class="@isset($isSidebarPanelOpen) {{ $isSidebarPanelOpen === 'true' ? 'is-sidebar-panel-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset  @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset bg-gradient-to-tr from-primary-alimni-400  via-primary-alimni-200 to-amber-100" >
+    class="@isset($isSidebarPanelOpen) {{ $isSidebarPanelOpen === 'true' ? 'is-sidebar-panel-open' : '' }} @endisset @isset($isHeaderBlur) {{ $isHeaderBlur === 'true' ? 'is-header-blur' : '' }} @endisset @isset($hasMinSidebar) {{ $hasMinSidebar === 'true' ? 'has-min-sidebar' : '' }} @endisset  @isset($headerSticky) {{ $headerSticky === 'false' ? 'is-header-not-sticky' : '' }} @endisset">
 
-    <div class="fixed top-0 left-0 w-screen h-screen bg-top bg-contain -z-5 bg-origin-content backdrop-blur-xl" style="background-image: url('{{ asset('images/bg-pattern-1.svg') }}')"></div>
+    <div class="lightbox z-[300]" x-data="{ lightboxOpen: false, imgSrc: '' }" x-show="lightboxOpen" x-transition
+        @lightbox.window="lightboxOpen = true; imgSrc = $event.detail;">
+        <div class="lightbox-container">
+            <img :src="imgSrc" @click.away="lightboxOpen = false">
+        </div>
+    </div>
+
+    <div class="fixed top-0 left-0 w-screen h-screen bg-top bg-contain opacity-75 -z-5 bg-origin-content backdrop-blur-xl"
+        style="background-image: url('{{ asset('images/bg-pattern-1.svg') }}')"></div>
     <div class="fixed top-0 left-0 w-screen h-screen backdrop-blur-xl -z-4"></div>
 
     <!-- Page Wrapper -->
@@ -71,7 +79,8 @@
                 <x-mobile.layouts.partials.headers.base-header :$routeBackButton />
         @endswitch
 
-        <main class='main-content hidden-header w-full min-h-[100vh] pb-8 @isset($headerPage) !mt-0 @endisset'>
+        <main
+            class='main-content hidden-header w-full min-h-[100vh] pb-8 @isset($headerPage) !mt-0 @endisset'>
 
             @isset($breadcrumb)
                 {{ $breadcrumb }}
@@ -169,8 +178,13 @@
 
             window.addEventListener('scroll', function() {
                 let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                let scrollHeight = document.documentElement.scrollHeight;
+                let clientHeight = document.documentElement.clientHeight;
 
-                if (scrollTop > lastScrollTop) {
+                if (scrollTop + clientHeight >= scrollHeight) {
+                    // Scrolled to the bottom
+                    bottomNavbar.classList.add('show');
+                } else if (scrollTop > lastScrollTop) {
                     // Scrolling down
                     bottomNavbar.classList.remove('show');
                 } else {

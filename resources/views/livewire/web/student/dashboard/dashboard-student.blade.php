@@ -4,7 +4,7 @@
             <x-slot:title>Dashboard</x-slot:title>
         </x-web.breadcrumb.breadcrumb>
     </x-slot:breadcrumb>
-    
+
     <div class="col-span-12 lg:col-span-8 xl:col-span-9">
         <div
             class="col-span-12 p-5 mt-12 card bg-gradient-to-r from-blue-500 to-blue-600 sm:col-span-8 sm:mt-0 sm:flex-row">
