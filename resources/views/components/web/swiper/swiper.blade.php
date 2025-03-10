@@ -1,9 +1,19 @@
 @props([
-    'pagination' => false
+    'pagination' => false,
+    'gap' => 16,
+    'effect' => '', // cards
 ])
 
 <div {{ $attributes->merge(['class' => 'px-3 mt-3 swiper']) }}
-    x-init="$nextTick(() => new Swiper($el, { slidesPerView: 'auto', spaceBetween: 16, pagination: { el: '.swiper-pagination', clickable: true}}))" {{ $attributes->merge() }}
+    x-init="$nextTick(() => $el._x_swiper = new Swiper($el, {
+        effect: '{{ $effect }}',
+        slidesPerView: 'auto',
+        spaceBetween: {{ $gap }},
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        }
+    }))"
 >
 
     <div class="swiper-wrapper">
