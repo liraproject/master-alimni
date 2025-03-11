@@ -18,6 +18,6 @@ class Province extends Model
 
     public function user(): HasOne
     {
-        return $this->hasOne(ProgramModel::class, 'foreign_key', 'local_key');
+        return $this->hasOne(Program::class, 'foreign_key', 'local_key');
     }
 }
